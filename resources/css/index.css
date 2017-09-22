@@ -54,16 +54,37 @@ body {
 
 .navbar-light .navbar-brand {
     color:#5f3813;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #5f3813;
+    color: rgba( 99, 48, 28, 0.7 );
+    font-weight: bold;
 }
 
 .nav-link:hover {
     color: #000000;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .carousel-item {
     background-image: url(../images/background_item_1.jpg);
     background-position: center;
     background-size: cover;
+}
+
+.bg-ex-light {
+    background-color: #fff;
+    background-color: rgba( 190, 187, 187, 0.695 );
+}
+
+.btn-outline-success {
+    background-color: transparent;
+    background-image: none;
+    border-color: #000;
+    color: #fff;
 }
 
 footer {
