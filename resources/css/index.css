@@ -1,0 +1,28 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+
+.navbar {
+    padding: 15px 15px;    
+}
+
+.navbar img {
+    height: 35px;
+    width: 35px;
+}
+
+.navbar-light .navbar-brand {
+    color:#5f3813;
+}
+
+.navbar-a-item {
+    font-size: 1.5em;
+}
+
+.nav-link:hover {
+    color: #000000;
+}
+
+   
