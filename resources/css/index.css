@@ -37,6 +37,12 @@ body {
         height: 35px;
         width: 35px;
     }
+    
+    .form-inline .form-control {
+        display: inline-block;
+        vertical-align: middle;
+        width: 300px;
+    }
 } 
 
 /* Medium devices (tablets, 768px and up) */
