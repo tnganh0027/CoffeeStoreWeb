@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>About</title>
-	<link rel="stylesheet" href="../resources/Semantic/dist/semantic.css">
-</head>
-<body>
-	<div class="ui container">
-		
-	</div>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"content="width=device-width, initial-scale=1.0">
+		<title>About</title>
+		<link rel="stylesheet"href="../resources/Semantic/dist/semantic.css">
+		<link rel="stylesheet"type="text/css"href="../resources/css/normalize.css">
+		<style type="text/css">
+		.ui.dividing.header {
+			padding-top: 10px;
+			font-size: 2em;
+		}
+		.ui.main.text.container {
+			min-height: 100%;
+		}
+		@media only screen
+		and (min-device-width:320px){
+			.header.item a {
+				font-size: 1em;
+			}
+		}
+		@media only screen
+		and (min-device-width:768px){
+			.header.item a {
+				font-size: 3em;
+			}
+		}
+		</style>
+	</head>
+	<body>
+		<div class="ui inverted vertical masthead center aligned segment">
+			<div class="ui container">
+				<div class="ui large secondary inverted pointing menu">
+					<div class="header item"><a href="index.html">The Coffee Shop</a></div>
+					<div class="right menu">
+						<a class="item"href="index.html">Home</a>
+						<a class="item"href="about.html">About</a>
+						<a class="item"href="contact.html">Contact</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui main text container">
+			<h4 class="ui dividing header">Welcome</h4>
+			<p>This is a website about all of the Ho Chi Minh City Coffee Shop. You can find all the detail information about some store here.</p>
+			<div class="ui divider"></div>
+		</div>
+		<div class="ui inverted vertical footer segment">
+			<div class="ui center align container">
+				<div class="ui stackable inverted divided equal height stackable grid">
+					<div class="column">
+						<h4 class="ui inverted header"style="text-align: center;">The Coffee Shop ©2017 - ALL RIGHTS RESERVED.</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
