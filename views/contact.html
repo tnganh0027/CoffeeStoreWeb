@@ -15,17 +15,22 @@
 		.ui.main.text.container{
 			min-height: 100%;
 		}
-
 		@media only screen
 		and (min-device-width:320px){
-			.header.item a {
-				font-size: 1em;
+			.brand.item a {
+				font-size: 2em;
+			}
+			.ui.menu.navbar{
+				display: block;
 			}
 		}
 		@media only screen
 		and (min-device-width:768px){
-			.header.item a {
+			.brand.item a {
 				font-size: 3em;
+			}
+			.ui.menu.navbar{
+				display: flex;
 			}
 		}
 		</style>
@@ -33,7 +38,7 @@
 	<body>
 		<div class="ui inverted vertical masthead center aligned segment">
 			<div class="ui container">
-				<div class="ui large secondary inverted pointing menu">
+				<div class="ui inverted menu navbar">
 					<div class="header item"><a href="index.html">The Coffee Shop</a></div>
 					<div class="right menu">
 						<a class="item" href="index.html">Home</a>
@@ -44,6 +49,7 @@
 			</div>
 		</div>
 		<div class="ui main text container">
+			<div class="ui divider"></div>
 			<h1 class="ui dividing header">Write us</h1>
 			<p>Please feel free to contact us by filling the form below. We will be in touch shortly.</p>
 			<div class="ui divider"></div>
@@ -65,12 +71,13 @@
 			</div>
 			<div class="ui divider"></div>
 			<div class="ui black button">Send</div>
+			<div class="ui divider"></div>
 		</div>
 		<div class="ui inverted vertical footer segment">
 			<div class="ui center align container">
 				<div class="ui stackable inverted divided equal height stackable grid">
 					<div class="column">
-						<h4 class="ui inverted header" style="text-align: center;">The Coffee Shop ©2017 - ALL RIGHTS RESERVED.</h4>
+						<h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
 					</div>
 				</div>
 			</div>
