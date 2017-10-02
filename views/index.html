@@ -1,106 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Coffee Shop</title>
-        <link rel="stylesheet" type="text/css" href="../resources/Semantic/dist/semantic.css">
-        <link rel="stylesheet" type="text/css" href="../resources/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://jeffry.in/old-jeffry-in/css/jeffry.in.slider.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script type="text/javascript" src="../resources/Semantic/dist/semantic.js"></script>
-        <script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
-        <style type="text/css" media="screen">
-            .slider1 .item1 {
-                background-image: url("../resources/images/background_item_1.jpg")
-            }
 
-            .slider1 .item2 {
-                background-image: url("../resources/images/background_item_2.jpg")
-            }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Shop</title>
+    <link rel="stylesheet" type="text/css" href="../resources/Semantic/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://jeffry.in/old-jeffry-in/css/jeffry.in.slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="../resources/Semantic/dist/semantic.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
+    <style type="text/css" media="screen">
+        .slider1 .item1 {
+            background-image: url("../resources/images/background_item_1.jpg");
+            background-size: cover;
+        }
 
-            .slider1 .item3 {
-                background-image: url("../resources/images/background_item_3.jpg")
-            }
+        .slider1 .item2 {
+            background-image: url("../resources/images/background_item_2.jpg");
+            background-size: cover;
+        }
 
-            .ui.dividing.header {
-                padding-top: 10px;
+        .slider1 .item3 {
+            background-image: url("../resources/images/background_item_3.jpg");
+            background-size: cover;
+        }
+
+        .ui.dividing.header {
+            padding-top: 10px;
+            font-size: 2em;
+        }
+
+        .ui.container {
+            min-height: 100%;
+        }
+
+        @media only screen and (min-device-width:320px) {
+            .brand.item {
                 font-size: 2em;
             }
 
-            .ui.container {
-                min-height: 100%;
+        }
+
+        @media only screen and (min-device-width:768px) {
+            .brand.item {
+                font-size: 3em;
             }
 
-            @media only screen and (min-device-width:320px) {
-                .brand.item {
-                    font-size: 2em;
-                }
+        }
+    </style>
+</head>
 
-            }
-
-            @media only screen and (min-device-width:768px) {
-                .brand.item {
-                    font-size: 3em;
-                }
-
-            }
-        </style>
-    </head>
-    <body>
-        <div class="ui inverted vertical masthead center aligned segment">
-            <div class="ui stackable container inverted menu">
-                <a href="index.html" class="brand item">The Coffee Shop</a>
-                <div class="right menu">
-                    <a class="item" href="index.html">Home</a>
-                    <a class="item" href="about.html">About</a>
-                    <a class="item" href="contact.html">Contact</a>
-                </div>
+<body>
+    <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui stackable container inverted menu">
+            <a href="index.html" class="brand item">The Coffee Shop</a>
+            <div class="right menu">
+                <a class="item" href="index.html">Home</a>
+                <a class="item" href="about.html">About</a>
+                <a class="item" href="contact.html">Contact</a>
             </div>
         </div>
-        <div class="slider slider1">
-            <div class="slides">
-                <div class="slide-item item1">
-                </div>
-                <div class="slide-item item2">
-                </div>
-                <div class="slide-item item3">
-                </div>
+    </div>
+    <div class="slider slider1">
+        <div class="slides">
+            <div class="slide-item item1">
+            </div>
+            <div class="slide-item item2">
+            </div>
+            <div class="slide-item item3">
             </div>
         </div>
-        <div class="ui inverted vertical footer segment">
-            <div class="ui center align container">
-                <div class="ui inverted section divider"></div>
-                <div class="ui stackable inverted divided grid">
-                    <div class="six wide column">
-                        <div class="ui compact labeled icon inverted icon massive link list">
-                            <a class="item"><i class="twitter icon"></i> Tweet</a>
-                            <a class="item"><i class="facebook icon"></i> Facebook</a>
-                            <a class="item"><i class="mail icon"></i> E-mail</a>
-                        </div>
-                    </div>
-                    <div class="ten wide column">
-                        <h4 class="ui inverted header">Group 3</h4>
-                        <div class="ui inverted list">
-                            <a href="#" class="item">Nguyen Khanh Binh</a>
-                            <a href="#" class="item">Truong Ngoc Anh</a>
-                            <a href="#" class="item">Le Nguyen Minh Tri</a>
-                            <a href="#" class="item">Do Hoang Minh Phuong</a>
-                        </div>
+    </div>
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center align container">
+            <div class="ui inverted section divider"></div>
+            <div class="ui stackable inverted divided grid">
+                <div class="six wide column">
+                    <div class="ui compact labeled icon inverted icon massive link list">
+                        <a class="item"><i class="twitter icon"></i> Tweet</a>
+                        <a class="item"><i class="facebook icon"></i> Facebook</a>
+                        <a class="item"><i class="mail icon"></i> E-mail</a>
                     </div>
                 </div>
-                <div class="ui inverted section divider"></div>
-                <h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
+                <div class="ten wide column">
+                    <h4 class="ui inverted header">Group 3</h4>
+                    <div class="ui inverted list">
+                        <a href="#" class="item">Nguyen Khanh Binh</a>
+                        <a href="#" class="item">Truong Ngoc Anh</a>
+                        <a href="#" class="item">Le Nguyen Minh Tri</a>
+                        <a href="#" class="item">Do Hoang Minh Phuong</a>
+                    </div>
+                </div>
             </div>
+            <div class="ui inverted section divider"></div>
+            <h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
         </div>
-        <script>
+    </div>
+    <script>
         $('.slider').glide({
-        autoplay: false,
-        arrowsWrapperClass: 'slider-arrows',
-        arrowRightText: '',
-        arrowLeftText: ''
+            autoplay: false,
+            arrowsWrapperClass: 'slider-arrows',
+            arrowRightText: '',
+            arrowLeftText: ''
         });
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
