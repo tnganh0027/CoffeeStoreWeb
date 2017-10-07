@@ -13,6 +13,12 @@
     <script type="text/javascript" src="../resources/Semantic/dist/semantic.js"></script>
     <script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
     <style type="text/css" media="screen">
+        .ui.menu .item:before {
+            top: 25%;
+            bottom: 25%;
+            height: 50%;
+        }
+
         .slider1 .item1 {
             background-image: url("../resources/images/background_item_1.jpg");
             background-size: cover;
@@ -41,26 +47,43 @@
             .brand.item {
                 font-size: 2em;
             }
-
         }
+
+        @media only screen and (max-width: 767px) {
+            .ui.stackable.menu .item {
+            width: 100% !important;
+            }
+            .delete-item{
+                display: none !important;
+            }
+        }
+
 
         @media only screen and (min-device-width:768px) {
             .brand.item {
                 font-size: 3em;
             }
-
         }
     </style>
 </head>
 
 <body>
     <div class="ui inverted vertical masthead center aligned segment">
-        <div class="ui stackable container inverted menu">
+        <div class="ui stackable inverted menu">
             <a href="index.html" class="brand item">The Coffee Shop</a>
+            <div class="item" style="width: 30%;">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+
             <div class="right menu">
                 <a class="item" href="index.html">Home</a>
+                <a class="item" href="explorer.html">Explore</a>
                 <a class="item" href="about.html">About</a>
                 <a class="item" href="contact.html">Contact</a>
+                <span class="item delete-item"></span>
             </div>
         </div>
     </div>
