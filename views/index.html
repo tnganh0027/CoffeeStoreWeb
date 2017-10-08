@@ -73,8 +73,8 @@
             <a href="index.html" class="brand item">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
-                    <input type="text" placeholder="Search...">
-                    <i class="search link icon"></i>
+                    <input type="text" placeholder="Search..." id="search-bar">
+                    <i class="search link icon" id="search-icon"></i>
                 </div>
             </div>
 
@@ -130,6 +130,17 @@
             arrowsWrapperClass: 'slider-arrows',
             arrowRightText: '',
             arrowLeftText: ''
+        });
+        
+        $('#search-icon').click(function(e){
+            e.preventDefault();
+            if($('#search-bar').val() === ''){
+               //do something
+            }
+            else{
+                var url = 'result.html';
+                window.open(url,'_self');
+            }
         });
     </script>
 </body>
