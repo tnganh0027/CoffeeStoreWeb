@@ -13,6 +13,20 @@
     <script type="text/javascript" src="../resources/Semantic/dist/semantic.js"></script>
     <script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
     <style type="text/css" media="screen">
+        .ui.inverted.menu a.item:hover {
+            background: none;
+            text-decoration: underline;
+            color: rgba(253, 98, 17, 0.6);
+        }
+
+        .ui.inverted.menu {
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            padding: 0;
+            z-index: 1;
+            width: 100%
+        }
+
         .ui.menu .item:before {
             top: 25%;
             bottom: 25%;
@@ -68,9 +82,9 @@
 </head>
 
 <body>
-    <div class="ui inverted vertical masthead center aligned segment">
-        <div class="ui stackable inverted menu">
-            <a href="index.html" class="brand item">The Coffee Shop</a>
+    <div id="nav-header" class="ui inverted vertical masthead center aligned segment" style="padding: 0;">
+        <div class="ui stackable inverted menu header-nav">
+            <a href="index.html" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
                     <input type="text" placeholder="Search..." id="search-bar">
@@ -131,16 +145,21 @@
             arrowRightText: '',
             arrowLeftText: ''
         });
-        
-        $('#search-icon').click(function(e){
+
+        $('#search-icon').click(function(e) {
             e.preventDefault();
-            if($('#search-bar').val() === ''){
-               //do something
-            }
-            else{
+            if ($('#search-bar').val() === '') {
+                //do something
+            } else {
                 var url = 'result.html';
-                window.open(url,'_self');
+                window.open(url, '_self');
             }
+        });
+
+        $(function() {
+            $(window).on("load resize", function() {
+                $(".slide-item").css("height", window.innerHeight);
+            });
         });
     </script>
 </body>
