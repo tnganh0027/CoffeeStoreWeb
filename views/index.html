@@ -18,13 +18,26 @@
             text-decoration: underline;
             color: rgba(253, 98, 17, 0.6);
         }
-
+        
         .ui.inverted.menu {
-            background: rgba(0, 0, 0, 0.5);
-            position: fixed;
+            background: none !important;
             padding: 0;
+        }
+        
+        #nav-header-scroll {
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
-            width: 100%
+            width: 100%;
+            position: fixed;
+            -ms-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+        
+        #nav-header-scroll.small{
+            padding: 0 !important;
         }
 
         .ui.menu .item:before {
@@ -82,7 +95,7 @@
 </head>
 
 <body>
-    <div id="nav-header" class="ui inverted vertical masthead center aligned segment" style="padding: 0;">
+    <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu header-nav">
             <a href="index.html" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
@@ -160,6 +173,15 @@
             $(window).on("load resize", function() {
                 $(".slide-item").css("height", window.innerHeight);
             });
+        });
+        
+        $(window).scroll(function(){
+            var sc = $(window).scrollTop();
+            if(sc > 100){
+                $("#nav-header-scroll").addClass("small");
+            }
+            else
+                $("#nav-header-scroll").removeClass("small");
         });
     </script>
 </body>
