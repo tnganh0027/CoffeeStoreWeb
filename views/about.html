@@ -11,6 +11,130 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="../resources/Semantic/dist/semantic.js"></script>
     <style type="text/css">
+        .team-member {
+          margin: 15px 0;
+          padding: 0;
+        }
+
+        .team-member figure {
+          position: relative;
+          overflow: hidden;
+          padding: 0;
+          margin: 0;
+        }
+
+        .team-member figure img {
+          min-width: 100%;
+        }
+
+        .team-member figcaption p {
+          font-size: 16px;
+        }
+
+        .team-member figcaption ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .team-member figcaption ul {
+          visibility: visible;
+          -webkit-transition: all 0.1s ease-in-out;
+          -moz-transition: all 0.1s ease-in-out;
+          -o-transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
+        }
+
+        .team-member figcaption ul li {
+          display: inline-block;
+          padding: 10px;
+        }
+
+        .team-member h4 {
+          margin: 10px 0 0;
+          padding: 0;
+        }
+
+        .team-member figcaption {
+          color: transparent;
+          background-color: transparent;
+          position: absolute;
+          z-index: 996;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .team-member figure:hover figcaption {
+          visibility: visible;
+          color: #fff;
+          background: rgba(85, 111, 155, 0.6);
+          height: 100%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .team-member figure:hover figcaption ul li a:hover {
+          color: rgba(49, 49, 49, .97);
+        }
+
+        .team-member figure img {
+          -webkit-transform: scale(1) rotate(0) translateY(0);
+          -moz-transform: scale(1) rotate(0) translateY(0);
+          -o-transform: scale(1) rotate(0) translateY(0);
+          -ms-transform: scale(1) rotate(0) translateY(0);
+          transform: scale(1) rotate(0) translateY(0);
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+        }
+
+        .team-member figure:hover img {
+          -webkit-transform: scale(1.1) rotate(1deg) translateY(12px);
+          -moz-transform: scale(1.1) rotate(1deg) translateY(12px);
+          -o-transform: scale(1.1) rotate(1deg) translateY(12px);
+          -ms-transform: scale(1.1) rotate(1deg) translateY(12px);
+          transform: scale(1.1) rotate(1deg) translateY(12px);
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+        }
+        
+        .team-member figure figcaption ul li a:hover {
+            color:rgba(255,255,255,0.6);
+        }
+        
+        .team-member h4 {
+            text-align: center;
+            text-transform: none;
+            color: rgba(254, 82, 76, 1);
+            font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+        
+        .team-member p {
+            text-align: center;
+        }
+        
+        a:link,
+        a:active,
+        a:visited{
+          color:rgba(255,255,255,1);
+        }
+    
         .ui.menu .item:before {
             top: 25%;
             bottom: 25%;
@@ -40,6 +164,10 @@
             h4.ui.header .sub.header {
                 font-size: 1rem;
             }
+            .team-member figcaption{
+                padding: 50px;
+                text-align: center;
+            }
         }
 
         @media only screen and (max-width: 767px) {
@@ -50,7 +178,7 @@
                 display: none !important;
             }
         }
-
+    
         @media only screen and (min-device-width:768px) {
             .brand.item {
                 font-size: 3em;
@@ -65,6 +193,12 @@
             h4.ui.header .sub.header {
                 font-size: 0.5rem;
             }
+            .team-member figcaption{
+                padding-top: 10px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
         }
 
         @media only screen and (min-device-width:1200px) {
@@ -78,7 +212,14 @@
             h4.ui.header .sub.header {
                 font-size: 1rem;
             }
+            .team-member figcaption{
+                padding-top: 10px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
         }
+        
     </style>
 </head>
 
@@ -108,6 +249,7 @@
         <p>This is a website about all of the Ho Chi Minh City Coffee Shop. You can find all the detail information about some members here.</p>
         <div class="ui divider"></div>
         <div class="ui segment">
+            <!--
             <table class="ui very basic collapsing celled table">
                 <thead>
                     <tr>
@@ -230,6 +372,77 @@
                     </tr>
                 </tbody>
             </table>
+            -->
+            <div class="ui four column doubling stackable grid container">
+                <div class="column">
+                    <div class="team-member">
+                        <figure>
+                            <img src="../resources/images/mem_1.jpg" alt="member_1" class="ui mini rounded image">
+                            <figcaption>
+                                <p>기억하나요 우리 함께 했던 시간 L.O.V.E LUV.</p>
+                                <ul>
+                                    <li><a href=""><i class="facebook f icon"></i></a></li>
+                                    <li><a href=""><i class="instagram icon"></i></a></li>
+                                    <li><a href=""><i class="mail outline icon"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <h4>Binh Nguyen Khanh</h4>
+                        <p>Habbangie &hearts;</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="team-member">
+                        <figure>
+                            <img src="../resources/images/mem_2.jpg" alt="member_2" class="ui mini rounded image">
+                            <figcaption>
+                                <p>너와 나 지금부터 잠시 12345. 눈을 감고 가만히 서 12345.</p>
+                                <ul>
+                                    <li><a href=""><i class="facebook f icon"></i></a></li>
+                                    <li><a href=""><i class="instagram icon"></i></a></li>
+                                    <li><a href=""><i class="mail outline icon"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <h4>Phuong Do Hoang Minh</h4>
+                        <p>Mamarong &hearts;</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="team-member">
+                        <figure>
+                            <img src="../resources/images/mem_3.jpg" alt="member_3" class="ui mini rounded image">
+                            <figcaption>
+                                <p>내 몸맨 nice nice body 잘빠진 다리 쌔끈한 허리.</p>
+                                <ul>
+                                    <li><a href=""><i class="facebook f icon"></i></a></li>
+                                    <li><a href=""><i class="instagram icon"></i></a></li>
+                                    <li><a href=""><i class="mail outline icon"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <h4>Anh Truong Ngoc</h4>
+                        <p>Hyomin &hearts;</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="team-member">
+                        <figure>
+                            <img src="../resources/images/mem_4.jpg" alt="member_4" class="ui mini rounded image">
+                            <figcaption>
+                                <p>How are you 내 사랑 잃어버린 조각 보고 싶어 울다 지칠 때 난.</p>
+                                <ul>
+                                    <li><a href=""><i class="facebook f icon"></i></a></li>
+                                    <li><a href=""><i class="instagram icon"></i></a></li>
+                                    <li><a href=""><i class="mail outline icon"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <h4>Tri Le Nguyen Minh</h4>
+                        <p>Elsie Ej &hearts;</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="ui inverted vertical footer segment">
@@ -258,16 +471,16 @@
         </div>
     </div>
     <script>
-        $('#search-icon').click(function(e){
-                e.preventDefault();
-                if($('#search-bar').val() === ''){
-                   //do something
-                }
-                else{
-                    var url = 'result.html';
-                    window.open(url,'_self');
-                }
-            });
+        $('#search-icon').click(function(e) {
+            e.preventDefault();
+            if ($('#search-bar').val() === '') {
+                //do something
+            } else {
+                var url = 'result.html';
+                window.open(url, '_self');
+            }
+        });
     </script>
 </body>
+
 </html>
