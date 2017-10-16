@@ -35,7 +35,7 @@
             }
         }
 
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: 1000px) {
             .ui.stackable.menu .item {
                 width: 100% !important;
             }
@@ -48,7 +48,7 @@
         }
 
 
-        @media only screen and (min-device-width:768px) {
+        @media only screen and (min-device-width:1001px) {
             .brand.item {
                 font-size: 3em;
             }
@@ -84,7 +84,7 @@
         <div id="mobile" style="align-items: center; display: flex;margin-left: auto !important;">
 
             <input type="checkbox" id="toggle-nav">
-            <label id="toggle-nav-label" for="toggle-nav"><i class="sidebar icon" style="color:orangered"></i></label>
+            <label id="toggle-nav-label" for="toggle-nav"><i id="icon-change" class="sidebar icon" style="color:orangered"></i></label>
 
             <div class="box">
                <div>
@@ -170,10 +170,23 @@
         $(window).scroll(function() {
             var sc = $(window).scrollTop();
             var width = $(window).width();
-            if (sc > 100 && width > 768) {
-                $("#nav-header-scroll").addClass("small");
+            if (sc > 100){
+                if(width > 1001){
+                    $("#nav-header-scroll").addClass("small");
+                }
             } else
                 $("#nav-header-scroll").removeClass("small");
+        });
+        
+        $('#icon-change').click(function() {
+            if($('#icon-change').hasClass('sidebar') === true){
+                $('#icon-change').addClass('remove');
+                $('#icon-change').removeClass('sidebar');
+            }
+            else {
+                $('#icon-change').addClass('sidebar');
+                $('#icon-change').removeClass('remove');
+            }
         });
     </script>
 </body>
