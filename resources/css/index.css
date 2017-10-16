@@ -1,3 +1,9 @@
+a:link,
+a:active,
+a:visited {
+    color: rgba(255, 255, 255, 1);
+}
+
 .ui.inverted.menu a.item:hover {
     background: none;
     text-decoration: underline;
