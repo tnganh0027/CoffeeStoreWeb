@@ -1,0 +1,40 @@
+a:link,
+a:active,
+a:visited {
+    color: rgba(255, 255, 255, 1);
+}
+
+.ui.inverted.menu a.item:hover {
+    background: none;
+    text-decoration: underline;
+    color: rgba(253, 98, 17, 0.6);
+}
+
+.ui.inverted.menu {
+    background: none !important;
+    padding: 0;
+}
+
+#nav-header-scroll {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+#nav-header-scroll.small {
+    padding: 0 !important;
+}
+
+.ui.menu .item:before {
+    top: 25%;
+    bottom: 25%;
+    height: 50%;
+}
+
+.ui.dividing.header {
+    padding-top: 10px;
+    font-size: 2em;
+}
+
+.ui.container {
+    min-height: 100%;
+}

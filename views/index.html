@@ -9,43 +9,11 @@
     <link rel="stylesheet" type="text/css" href="../resources/Semantic/dist/semantic.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="https://jeffry.in/old-jeffry-in/css/jeffry.in.slider.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="../resources/Semantic/dist/semantic.js"></script>
     <script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
     <style type="text/css" media="screen">
-        .ui.inverted.menu a.item:hover {
-            background: none;
-            text-decoration: underline;
-            color: rgba(253, 98, 17, 0.6);
-        }
-        
-        .ui.inverted.menu {
-            background: none !important;
-            padding: 0;
-        }
-        
-        #nav-header-scroll {
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            width: 100%;
-            position: fixed;
-            -ms-transition: all 0.3s ease-out;
-            -moz-transition: all 0.3s ease-out;
-            -webkit-transition: all 0.3s ease-out;
-            -o-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-        }
-        
-        #nav-header-scroll.small{
-            padding: 0 !important;
-        }
-
-        .ui.menu .item:before {
-            top: 25%;
-            bottom: 25%;
-            height: 50%;
-        }
-
         .slider1 .item1 {
             background-image: url("../resources/images/background_item_1.jpg");
             background-size: cover;
@@ -59,15 +27,6 @@
         .slider1 .item3 {
             background-image: url("../resources/images/background_item_3.jpg");
             background-size: cover;
-        }
-
-        .ui.dividing.header {
-            padding-top: 10px;
-            font-size: 2em;
-        }
-
-        .ui.container {
-            min-height: 100%;
         }
 
         @media only screen and (min-device-width:320px) {
@@ -174,13 +133,12 @@
                 $(".slide-item").css("height", window.innerHeight);
             });
         });
-        
-        $(window).scroll(function(){
+
+        $(window).scroll(function() {
             var sc = $(window).scrollTop();
-            if(sc > 100){
+            if (sc > 100) {
                 $("#nav-header-scroll").addClass("small");
-            }
-            else
+            } else
                 $("#nav-header-scroll").removeClass("small");
         });
     </script>
