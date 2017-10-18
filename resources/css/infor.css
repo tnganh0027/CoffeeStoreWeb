@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font: 14px/1 'Open Sans', sans-serif;
-  color: #555;
+    font: 14px/1 'Open Sans', sans-serif;
+    color: #555;
 
 }
 
 .gallery {
-  /* width: 640px; */
-  margin: 0 auto;
-  -ms-flex-item-align: center;
-  align-self: center;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.3);
-  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+    /* width: 640px; */
+    margin: 0 auto;
+    -ms-flex-item-align: center;
+    align-self: center;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
 }
 
 .gallery > div {
-  position: relative;
-  float: left;
-  padding: 5px;
+    position: relative;
+    float: left;
+    padding: 5px;
 }
 
- /* .gallery > div > img {
+/* .gallery > div > img {
   display: block;
   width: 200px;
   transition: .1s transform;
@@ -37,28 +37,29 @@ body {
  } */
 
 .gallery > div:hover {
-  z-index: 1;
+    z-index: 1;
 }
 
 .gallery > div:hover > img {
-  -webkit-transform: scale(3.0,3.0);
-  transform: scale(3.0,3.0);
-  -webkit-transition: .3s transform;
-  transition: .3s transform;
+    -webkit-transform: scale(3.0, 3.0);
+    transform: scale(3.0, 3.0);
+    -webkit-transition: .3s transform;
+    transition: .3s transform;
 }
 
-.cf:before, .cf:after {
-  display: table;
-  content: "";
-  line-height: 0;
+.cf:before,
+.cf:after {
+    display: table;
+    content: "";
+    line-height: 0;
 }
 
 .cf:after {
-  clear: both;
+    clear: both;
 }
 
 #inforpart {
-  background-color:#FEFEFA;
+    background-color: #FEFEFA;
 }
 
 a:link,
