@@ -16,12 +16,8 @@ a:visited {
 }
 
 #nav-header-scroll {
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.9);
     width: 100%;
-    position: fixed;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
 }
 
 #nav-header-scroll.small {
@@ -41,83 +37,4 @@ a:visited {
 
 .ui.container {
     min-height: 100%;
-}
-
-#mobile .box {
-	position: fixed;
-	text-align: center;
-	overflow: hidden;
-	z-index: -1;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	top: 0px;
-	background: rgba(0,0,0,0.8);
-	-webkit-transition: all 0.3s ease-in-out; 
-	transition: all 0.3s ease-in-out;
-}
-
-#mobile ul {
-	position: relative;
-	top: 20%;
-	-webkit-transform: scale(2);
-	transform: scale(2);
-	-webkit-transition: all 0.3s ease-in-out; 
-	transition: all 0.3s ease-in-out;
-}
-
-#mobile li { 
-	display: inline-block; 
-	margin: 20px;
-}
-
-#mobile li a {
-	border-radius: 3px;
-	padding: 15px;
-	border: 1px solid transparent;
-	text-decoration: none;
-	font-size: 18px;
-	color: #fff;
-	-webkit-transition: all 0.2s ease-in-out; 
-	transition: all 0.2s ease-in-out;
-}
-
-#mobile li a:hover { border-color: #fff; }
-
-#mobile li a i { 
-	margin-right: 5px; 
-	font-size: 24px;
-}
-
-#toggle-nav-label {
-	color: rgba(0,0,0,0.5);
-	background: rgba(0,0,0,0.2);
-	text-align: center;
-	line-height: 30px;
-	font-size: 16px;
-	display: block;
-	cursor: pointer;
-	position: relative;
-	z-index: 500;
-	width: 30px;
-	height: 30px;
-	border-radius: 5px;
-}
-
-#toggle-nav { display: none; }
-
-#toggle-nav:checked ~ .box { 
-	opacity: 1;
-	z-index: 400;
-}
-
-#toggle-nav:checked ~ .box ul {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-}
-
-#toggle-nav:checked ~ #toggle-nav-label { 
-	background: #fff; 
-	color: rgba(0,0,0,0.8);
 }

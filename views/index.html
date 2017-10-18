@@ -34,34 +34,63 @@
                 font-size: 2em;
             }
         }
+        
+        @media only screen and (min-device-width:768px) {
+            .brand.item {
+                font-size: 3em;
+            }
+        }
+        
+        @media only screen and (max-width: 1043px) {
+            .ui.stackable.menu .right.menu,
+            .ui.stackable.menu .left.menu {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
 
-        @media only screen and (max-width: 1000px) {
+            .ui.stackable.menu {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+
+            .ui.stackable.menu .item {
+                width: 100% !important;
+            }
+
+            .ui.stackable.menu .right.menu,
+            .ui.stackable.menu .right.item {
+                margin-left: 0 !important;
+            }
+
+            .ui.stackable.menu .item:before{
+                position: absolute;
+                content: '';
+                top: auto;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                height: 1px;
+            }
+            
             .ui.stackable.menu .item {
                 width: 100% !important;
             }
             .delete-item {
                 display: none !important;
             }
-            #computer-tablet{
-                display:none;
-            }
         }
 
-
-        @media only screen and (min-device-width:1001px) {
-            .brand.item {
-                font-size: 3em;
-            }
-            #mobile{
-                display:none !important;
-            }
-        }
+        
     </style>
 </head>
 
 <body>
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
-        <div id="computer-tablet" class="ui stackable inverted menu header-nav">
+        <div class="ui stackable inverted menu header-nav">
             <a href="index.html" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
@@ -76,33 +105,6 @@
                 <a class="item" href="about.html">About</a>
                 <a class="item" href="contact.html">Contact</a>
                 <span class="item delete-item"></span>
-            </div>
-        </div>
-
-
-
-        <div id="mobile" style="align-items: center; display: flex;margin-left: auto !important;">
-
-            <input type="checkbox" id="toggle-nav">
-            <label id="toggle-nav-label" for="toggle-nav"><i id="icon-change" class="sidebar icon" style="color:orangered"></i></label>
-
-            <div class="box">
-               <div>
-                   <h4>The Coffee Shop</h4>
-               </div>
-                <ul style="padding: 0;">
-                    <li><a href="index.html"> Home</a></li>
-                    <li><a href="explorer.html"> Explore</a></li>
-                    <li><a href="about.html"> About</a></li>
-                    <li><a href="contact.html"> Contact</a></li>
-                    <li>
-                        <div class="ui icon input">
-                            <input type="text" placeholder="Search..." id="search-bar">
-                            <i class="search link icon" id="search-icon"></i>
-                        </div>
-                    </li>
-                </ul>
-
             </div>
         </div>
     </div>
@@ -165,28 +167,6 @@
             $(window).on("load resize", function() {
                 $(".slide-item").css("height", window.innerHeight);
             });
-        });
-
-        $(window).scroll(function() {
-            var sc = $(window).scrollTop();
-            var width = $(window).width();
-            if (sc > 100){
-                if(width > 1001){
-                    $("#nav-header-scroll").addClass("small");
-                }
-            } else
-                $("#nav-header-scroll").removeClass("small");
-        });
-        
-        $('#icon-change').click(function() {
-            if($('#icon-change').hasClass('sidebar') === true){
-                $('#icon-change').addClass('remove');
-                $('#icon-change').removeClass('sidebar');
-            }
-            else {
-                $('#icon-change').addClass('sidebar');
-                $('#icon-change').removeClass('remove');
-            }
         });
     </script>
 </body>
