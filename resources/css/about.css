@@ -140,3 +140,120 @@ a:visited {
 .ui.container {
     min-height: 100%;
 }
+
+@media only screen and (min-device-width:320px) {
+    .brand.item {
+        font-size: 2em;
+    }
+
+    .ui.header>.image:not(.icon),.ui.header>img {
+        display: inline-block;
+    }
+
+    .content {
+        font-size: 1.07142857rem;
+    }
+
+    h4.ui.header .sub.header {
+        font-size: 1rem;
+    }
+
+    .team-member figcaption {
+        padding: 50px;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width:1043px) {
+    .ui.stackable.menu .right.menu,
+    .ui.stackable.menu .left.menu {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .ui.stackable.menu {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .ui.stackable.menu .item {
+        width: 100% !important;
+    }
+
+    .ui.stackable.menu .right.menu,
+    .ui.stackable.menu .right.item {
+        margin-left: 0 !important;
+    }
+
+    .ui.stackable.menu .item:before {
+        position: absolute;
+        content: '';
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 1px;
+    }
+
+    .ui.stackable.menu .item {
+        width: 100% !important;
+    }
+
+    .delete-item {
+        display: none !important;
+    }
+
+}
+
+@media only screen and (min-device-width:768px) {
+    .brand.item {
+        font-size: 3em;
+    }
+
+    .ui.header>.image:not(.icon),.ui.header>img {
+        display: block;
+    }
+
+    .content {
+        font-size: 0.5em;
+    }
+
+    h4.ui.header .sub.header {
+        font-size: 0.5rem;
+    }
+
+    .team-member figcaption {
+        padding-top: 10px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+}
+
+@media only screen and (min-device-width:1200px) {
+    .ui.header>.image:not(.icon),.ui.header>img {
+        display: inline-block;
+    }
+
+    .content {
+        font-size: 1.07142857rem;
+    }
+
+    h4.ui.header .sub.header {
+        font-size: 1rem;
+    }
+
+    .team-member figcaption {
+        padding-top: 10px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+}

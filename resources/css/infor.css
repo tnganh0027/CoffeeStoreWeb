@@ -1,107 +1,212 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
+<<<<<<< HEAD
   font: 14px/1 'Open Sans', sans-serif;
   color: #555;
-
 }
 
 .gallery {
+
   /* width: 640px; */
   margin: 0 auto;
   -ms-flex-item-align: center;
   align-self: center;
   background: #fff;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.3);
-  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+=======
+    font: 14px/1 'Open Sans', sans-serif;
+    color: #555;
+
+}
+
+.gallery {
+    /* width: 640px; */
+    margin: 0 auto;
+    -ms-flex-item-align: center;
+    align-self: center;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+>>>>>>> 8c80a1d769574cbea1bd8d0d4c81442d581e4b55
 }
 
 .gallery > div {
-  position: relative;
-  float: left;
-  padding: 5px;
+    position: relative;
+    float: left;
+    padding: 5px;
 }
 
- /* .gallery > div > img {
+/* .gallery > div > img {
+<<<<<<< HEAD
+ display: block;
+ width: 200px;
+ transition: .1s transform;
+ transform: translateZ(0); hack
+} */
+=======
   display: block;
   width: 200px;
   transition: .1s transform;
   transform: translateZ(0); hack
  } */
 
+>>>>>>> 8c80a1d769574cbea1bd8d0d4c81442d581e4b55
 .gallery > div:hover {
-  z-index: 1;
+    z-index: 1;
 }
 
 .gallery > div:hover > img {
-  -webkit-transform: scale(3.0,3.0);
-  transform: scale(3.0,3.0);
+<<<<<<< HEAD
+  -webkit-transform: scale(3.0, 3.0);
+  transform: scale(3.0, 3.0);
   -webkit-transition: .3s transform;
   transition: .3s transform;
+=======
+    -webkit-transform: scale(3.0, 3.0);
+    transform: scale(3.0, 3.0);
+    -webkit-transition: .3s transform;
+    transition: .3s transform;
+>>>>>>> 8c80a1d769574cbea1bd8d0d4c81442d581e4b55
 }
 
-.cf:before, .cf:after {
+.cf:before,
+.cf:after {
+<<<<<<< HEAD
   display: table;
   content: "";
   line-height: 0;
+=======
+    display: table;
+    content: "";
+    line-height: 0;
+>>>>>>> 8c80a1d769574cbea1bd8d0d4c81442d581e4b55
 }
 
 .cf:after {
-  clear: both;
+    clear: both;
 }
 
 #inforpart {
-  background-color:#FEFEFA;
+<<<<<<< HEAD
+  background-color: #FEFEFA;
+=======
+    background-color: #FEFEFA;
+>>>>>>> 8c80a1d769574cbea1bd8d0d4c81442d581e4b55
 }
 
 a:link,
 a:active,
 a:visited {
-    color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .ui.inverted.menu a.item:hover {
-    background: none;
-    text-decoration: underline;
-    color: rgba(253, 98, 17, 0.6);
+  background: none;
+  text-decoration: underline;
+  color: rgba(253, 98, 17, 0.6);
 }
 
 .ui.inverted.menu {
-    background: none !important;
-    padding: 0;
+  background: none !important;
+  padding: 0;
 }
 
 #nav-header-scroll {
-    background: rgba(0, 0, 0, 0.9);
-    width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
 }
 
 #nav-header-scroll.small {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .ui.menu .item:before {
-    top: 25%;
-    bottom: 25%;
-    height: 50%;
+  top: 25%;
+  bottom: 25%;
+  height: 50%;
 }
 
 .ui.dividing.header {
-    padding-top: 10px;
-    font-size: 2em;
+  padding-top: 10px;
+  font-size: 2em;
 }
 
 .ui.container {
-    min-height: 100%;
+  min-height: 100%;
 }
 
 .ui.pagination.menu {
-    float: right;
+  float: right;
+}
+
+.ui.container {
+  min-height: 100%;
+}
+
+@media only screen and (min-device-width:320px) {
+  .brand.item {
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (min-device-width:768px) {
+  .brand.item {
+    font-size: 3em;
+  }
+
+}
+
+@media only screen and (max-width:1043px) {
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .left.menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .ui.stackable.menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .ui.stackable.menu .item {
+    width: 100% !important;
+  }
+
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .right.item {
+    margin-left: 0 !important;
+  }
+
+  .ui.stackable.menu .item:before {
+    position: absolute;
+    content: '';
+    top: auto;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+  }
+
+  .ui.stackable.menu .item {
+    width: 100% !important;
+  }
+
+  .delete-item {
+    display: none !important;
+  }
+
 }
