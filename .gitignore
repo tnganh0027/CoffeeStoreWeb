@@ -1,0 +1,7 @@
+
+resources/.DS_Store
+*.xml
+.DS_Store
+*.iml
+.idea/*
+.idea/sonarlint/issuestore/index.pb

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coffee Shop</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Contact</title>
     <link rel="stylesheet" type="text/css" href="../resources/css/semantic.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/jeffry.in.slider.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/icon.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/contact.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="../resources/js/semantic.js"></script>
-    <script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
 </head>
 
 <body>
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
-        <div class="ui stackable inverted menu header-nav">
+        <div class="ui stackable inverted menu">
             <a href="index.html" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
@@ -36,14 +34,30 @@
             </div>
         </div>
     </div>
-    <div class="slider slider1">
-        <div class="slides">
-            <div class="slide-item item1">
+    <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
+        <div class="ui segment">
+            <h1 class="ui dividing header">Write us</h1>
+            <p>Please feel free to contact us by filling the form below. We will be in touch shortly.</p>
+            <div class="ui divider"></div>
+            <div class="ui form">
+                <div class="required field">
+                    <label>Name</label>
+                    <input type="text">
+                </div>
+                <div class="ui divider"></div>
+                <div class="required field">
+                    <label>Email</label>
+                    <input type="email">
+                </div>
+                <div class="ui divider"></div>
+                <div class="required field">
+                    <label>Content</label>
+                    <textarea></textarea>
+                </div>
             </div>
-            <div class="slide-item item2">
-            </div>
-            <div class="slide-item item3">
-            </div>
+            <div class="ui divider"></div>
+            <div class="ui black button">Send</div>
+            <div class="ui divider"></div>
         </div>
     </div>
     <div class="ui inverted vertical footer segment">
@@ -52,7 +66,7 @@
             <div class="ui stackable inverted divided grid">
                 <div class="eight wide column">
                     <div class="ui compact labeled icon inverted icon massive link list">
-                        <a class="item"><i class="twitter icon"></i> Tweet</a>
+                        <a class="item"><i class="twitter icon"></i> Twitter</a>
                         <a class="item"><i class="facebook icon"></i> Facebook</a>
                         <a class="item"><i class="mail icon"></i> E-mail</a>
                     </div>
@@ -72,15 +86,6 @@
         </div>
     </div>
     <script>
-        $('.slider').glide({
-            autoplay: 6000,
-            hoverpause: true,
-            animationDuration: 500,
-            arrowsWrapperClass: 'slider-arrows',
-            arrowRightText: '',
-            arrowLeftText: ''
-        });
-
         $('#search-icon').click(function(e) {
             e.preventDefault();
             if ($('#search-bar').val() === '') {
@@ -89,12 +94,6 @@
                 var url = 'result.html';
                 window.open(url, '_self');
             }
-        });
-
-        $(function() {
-            $(window).on("load resize", function() {
-                $(".slide-item").css("height", window.innerHeight);
-            });
         });
     </script>
 </body>

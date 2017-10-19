@@ -39,19 +39,8 @@ a:visited {
     min-height: 100%;
 }
 
-.slider1 .item1 {
-    background-image: url("../images/background_item_1.jpg");
-    background-size: cover;
-}
-
-.slider1 .item2 {
-    background-image: url("../images/background_item_2.jpg");
-    background-size: cover;
-}
-
-.slider1 .item3 {
-    background-image: url("../images/background_item_3.jpg");
-    background-size: cover;
+.ui.pagination.menu {
+    float: right;
 }
 
 @media only screen and (min-device-width:320px) {
