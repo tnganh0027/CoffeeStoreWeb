@@ -67,7 +67,7 @@
   border-radius:50%;
 }
 .slider-arrow--right, .slider-arrow--left {
-  background-image: url('/old-jeffry-in/assets/glide-arrows.png');
+  background-image: url('https://jeffry.in/old-jeffry-in/assets/glide-arrows.png');
   background-repeat:no-repeat;
   width: 17px;
 height: 28px;
