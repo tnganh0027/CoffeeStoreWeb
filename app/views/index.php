@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php 
+    $base_url = 'http://localhost/CoffeeStoreWeb';
+ ?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Coffee Shop</title>
-    <link rel="stylesheet" type="text/css" href="../resources/css/semantic.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/jeffry.in.slider.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/index.css">
+    <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/resources/css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/resources/css/jeffry.in.slider.css">
+    <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/resources/css/index.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script type="text/javascript" src="../resources/js/semantic.js"></script>
-    <script type="text/javascript" src="../resources/js/jquery.glide.min.js"></script>
+    <script type="text/javascript" src="<?= $base_url ?>/resources/js/semantic.js"></script>
+    <script type="text/javascript" src="<?= $base_url ?>/resources/js/jquery.glide.min.js"></script>
 </head>
 
 <body>
