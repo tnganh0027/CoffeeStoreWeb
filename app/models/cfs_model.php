@@ -13,6 +13,11 @@
 			}
 			return $rows;
 		}
+
+		public function insertData($name,$address,$about,$view=0,$star=0,$image)
+		{
+			
+		}
 	}
 
  ?>
