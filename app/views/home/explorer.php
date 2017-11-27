@@ -56,9 +56,9 @@
                     <div class="ui three stackable cards">
                         <?php foreach ($data as $value): ?>
                             <div class="card">
-                                <!-- <div class="image">
-                                    <img src="../resources/images/background_item_1.jpg">
-                                </div> -->
+                                <div class="image">
+                                    <img src="<?= $value['image'] ?>">
+                                </div> 
                                 <div class="content">
                                     <div class="header"><?= $value['name'] ?></div>
                                     <div class="meta">

@@ -62,12 +62,15 @@
 			$base_url = 'http://localhost/CoffeeStoreWeb/public/';
 			$image = $base_url . "uploads/" . basename($_FILES["image"]["name"]);
 
-
-			var_dump($image);
-
 			$data = $this->model('cfs_model');
-			$data->insertData($name,$address,$about,$view,$star,$image='');
-			die();
+			if($data->insertData($name,$address,$about,$view,$star,$image))
+			{
+				echo 'Done';
+			}
+			else 
+			{
+				echo 'Failure';
+			}
 		}
 	}
  ?>

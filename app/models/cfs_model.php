@@ -16,7 +16,12 @@
 
 		public function insertData($name,$address,$about,$view=0,$star=0,$image)
 		{
-			
+			include(__DIR__.'\..\database.php');
+			$sql = "INSERT INTO cfs_data (image, name, address, about, view, star)
+					VALUES ('$image', '$name', '$address', '$about', '$view', '$star');";
+			if($conn->multi_query($sql) === TRUE)
+				return TRUE;
+			return FALSE; 
 		}
 	}
 

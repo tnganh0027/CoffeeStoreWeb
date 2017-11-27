@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2017 at 04:29 PM
+-- Generation Time: Nov 27, 2017 at 07:07 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -41,7 +41,7 @@ CREATE TABLE `cfs_data` (
 --
 
 INSERT INTO `cfs_data` (`id`, `image`, `name`, `address`, `about`, `view`, `star`) VALUES
-(1, '', 'Coffee House Cao Thắng', '86 - 88, Cao Thắng, Quận 3, TP. HCM', '\"Đi cà phê\" từ lâu không đơn thuần chỉ là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại The Coffee House, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng.', 12, 4);
+(1, 'http://localhost/CoffeeStoreWeb/public/uploads/17308764_1879495292322136_2284954227869868252_n.jpg', 'Coffee House Cao Thắng', '86 - 88, Cao Thắng, Quận 3, TP. HCM', '\"Đi cà phê\" từ lâu không đơn thuần chỉ là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại The Coffee House, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng.', 12, 4);
 
 --
 -- Indexes for dumped tables
@@ -61,7 +61,7 @@ ALTER TABLE `cfs_data`
 -- AUTO_INCREMENT for table `cfs_data`
 --
 ALTER TABLE `cfs_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
