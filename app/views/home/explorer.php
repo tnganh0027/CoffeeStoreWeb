@@ -4,7 +4,7 @@
 <?php 
     $base_url = 'http://localhost/CoffeeStoreWeb/public';
  ?>
- 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome = 1">
@@ -16,7 +16,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
 </head>
-
 <body>
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu">
@@ -54,7 +53,7 @@
                 <div class="ui dividing header">Explorer</div>
                 <div class="ui segment" style="overflow: auto">
                     <div class="ui three stackable cards">
-                        <?php foreach ($data as $value): ?>
+                        <?php foreach ($data['store'] as $value): ?>
                             <div class="card">
                                 <div class="image">
                                     <img src="<?= $value['image'] ?>">
@@ -84,21 +83,15 @@
                     </div>
                     <div class="ui divider"></div>
                     <div class="ui pagination menu">
-                        <a class="active item">
-								1
-							</a>
-                        <div class="disabled item">
-                            ...
-                        </div>
-                        <a class="item">
-								10
-							</a>
-                        <a class="item">
-								11
-							</a>
-                        <a class="item">
-								12
-							</a>
+                        <?php 
+                            for ($i = 0; $i < $data['page'] ; $i++) {
+                                ?>
+                                    <a class="active item">
+                                        <?= $i+1 ?>
+                                    </a>
+                                <?php
+                            }
+                         ?>
                     </div>
                 </div>
             </div>

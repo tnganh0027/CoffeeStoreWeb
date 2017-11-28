@@ -24,7 +24,10 @@
 		{
 			$data = $this->model('cfs_model');
 			$result = $data->getData();
-			$this->view('home/explorer', $result);
+			$page = $data->totalPage();
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('home/explorer', $result_array);
 		}
 	}
  ?>
