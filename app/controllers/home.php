@@ -10,7 +10,9 @@
 
 		public function about()
 		{
-			$this->view('home/about');
+			$data = $this->model('cfm_model');
+			$result = $data->getData();
+			$this->view('home/about',$result);
 		}
 
 		public function contact()

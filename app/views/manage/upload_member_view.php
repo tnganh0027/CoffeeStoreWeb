@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload</title>
+    <title>Upload Member</title>
     <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/semantic.css">
     <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/jeffry.in.slider.css">
@@ -20,26 +20,30 @@
 
 <body>
     <div class="ui container">
-        <form class="ui form" method="post" action="upload/insert_data" enctype='multipart/form-data'>
+        <form class="ui form" method="post" action="insert_data_member" enctype='multipart/form-data'>
           <div class="field">
             <label>Name</label>
             <input type="text" name="name" placeholder="Name">
           </div>
           <div class="field">
-            <label>Address</label>
-            <input type="text" name="address" placeholder="Address">
+            <label>Id Name</label>
+            <input type="text" name="idname" placeholder="Id Name">
           </div>
           <div class="field">
             <label>About</label>
             <input type="text" name="about" placeholder="About">
           </div>
           <div class="field">
-            <label>View</label>
-            <input type="number" name="view" placeholder="View">
+            <label>Facebook</label>
+            <input type="text" name="link_fb" placeholder="Link FaceBook">
           </div>
           <div class="field">
-            <label>Star</label>
-            <input type="number" name="star" placeholder="Star">
+            <label>Instagram</label>
+            <input type="text" name="link_ins" placeholder="Link Instagram">
+          </div>
+          <div class="field">
+            <label>Twitter</label>
+            <input type="text" name="link_tw" placeholder="Link Twitter">
           </div>
           <div class="field">
             <label>Image</label>

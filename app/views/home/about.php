@@ -168,74 +168,25 @@
             </table>
             -->
             <div class="ui four column doubling stackable grid container">
-                <div class="column">
-                    <div class="ui fluid card team-member">
-                        <figure>
-                            <img src="../resources/images/mem_1.jpg" alt="member_1" class="ui mini rounded image">
-                            <figcaption>
-                                <p>기억하나요 우리 함께 했던 시간 L.O.V.E LUV.</p>
-                                <ul>
-                                    <li><a href=""><i class="facebook f icon"></i></a></li>
-                                    <li><a href=""><i class="instagram icon"></i></a></li>
-                                    <li><a href=""><i class="mail outline icon"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <h4>Binh Nguyen Khanh</h4>
-                        <p>Habbangie &hearts;</p>
+                <?php foreach ($data as $value): ?>
+                    <div class="column">
+                        <div class="ui fluid card team-member">
+                            <figure>
+                                <img src="<?= $value['image'] ?>" class="ui mini rounded image">
+                                <figcaption>
+                                    <p><?= $value['about'] ?></p>
+                                    <ul>
+                                        <li><a href="<?= $value['link_fb'] ?>"><i class="facebook f icon"></i></a></li>
+                                        <li><a href="<?= $value['link_ins'] ?>"><i class="instagram icon"></i></a></li>
+                                        <li><a href="<?= $value['link_tw'] ?>"><i class="mail outline icon"></i></a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <h4><?= $value['name'] ?></h4>
+                            <p><?= $value['idname'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="ui fluid card team-member">
-                        <figure>
-                            <img src="../resources/images/mem_2.jpg" alt="member_2" class="ui mini rounded image">
-                            <figcaption>
-                                <p>너와 나 지금부터 잠시 12345. 눈을 감고 가만히 서 12345.</p>
-                                <ul>
-                                    <li><a href=""><i class="facebook f icon"></i></a></li>
-                                    <li><a href=""><i class="instagram icon"></i></a></li>
-                                    <li><a href=""><i class="mail outline icon"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <h4>Phuong Do Hoang Minh</h4>
-                        <p>Mamarong &hearts;</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui fluid card team-member">
-                        <figure>
-                            <img src="../resources/images/mem_3.jpg" alt="member_3" class="ui mini rounded image">
-                            <figcaption>
-                                <p>내 몸맨 nice nice body 잘빠진 다리 쌔끈한 허리.</p>
-                                <ul>
-                                    <li><a href=""><i class="facebook f icon"></i></a></li>
-                                    <li><a href=""><i class="instagram icon"></i></a></li>
-                                    <li><a href=""><i class="mail outline icon"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <h4>Anh Truong Ngoc</h4>
-                        <p>Hyomin &hearts;</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui fluid card team-member">
-                        <figure>
-                            <img src="../resources/images/mem_4.jpg" alt="member_4" class="ui mini rounded image">
-                            <figcaption>
-                                <p>How are you 내 사랑 잃어버린 조각 보고 싶어 울다 지칠 때 난.</p>
-                                <ul>
-                                    <li><a href=""><i class="facebook f icon"></i></a></li>
-                                    <li><a href=""><i class="instagram icon"></i></a></li>
-                                    <li><a href=""><i class="mail outline icon"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <h4>Tri Le Nguyen Minh</h4>
-                        <p>Elsie Ej &hearts;</p>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
