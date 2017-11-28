@@ -13,6 +13,7 @@
 			$about = $_POST['about'];
 			$view = $_POST['view'];
 			$star = $_POST['star'];
+			$content = $_POST['content'];
 			
 			/* Upload image */
 			$destination_path = getcwd().DIRECTORY_SEPARATOR;
@@ -63,7 +64,7 @@
 			$image = $base_url . "uploads/" . basename($_FILES["image"]["name"]);
 
 			$data = $this->model('cfs_model');
-			if($data->insertData($name,$address,$about,$view,$star,$image))
+			if($data->insertData($name,$address,$about,$view,$star,$image,$content))
 			{
 				echo 'Done';
 			}

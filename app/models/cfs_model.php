@@ -14,11 +14,11 @@
 			return $rows;
 		}
 
-		public function insertData($name,$address,$about,$view=0,$star=0,$image)
+		public function insertData($name,$address,$about,$view=0,$star=0,$image,$content)
 		{
 			include(__DIR__.'\..\database.php');
-			$sql = "INSERT INTO cfs_data (image, name, address, about, view, star)
-					VALUES ('$image', '$name', '$address', '$about', '$view', '$star');";
+			$sql = "INSERT INTO cfs_data (image, name, address, content, about, view, star)
+					VALUES ('$image', '$name', '$address','$content', '$about', '$view', '$star');";
 			if($conn->multi_query($sql) === TRUE)
 				return TRUE;
 			return FALSE; 

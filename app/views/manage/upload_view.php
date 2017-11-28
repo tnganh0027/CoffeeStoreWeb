@@ -16,6 +16,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/jquery.glide.min.js"></script>
+    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
+    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
@@ -35,6 +37,10 @@
           <div class="field">
             <label>About</label>
             <input type="text" name="about" placeholder="About">
+          </div>
+          <div class="field">
+            <label>Content</label>
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
           </div>
           <div class="field">
             <label>View</label>
@@ -57,6 +63,16 @@
           </div>
         </form>
     </div>   
+  <script>
+    CKEDITOR.replace( 'content', {
+        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?Type=Images',
+        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl:  '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        filebrowserWindowWidth : '1000',
+        filebrowserWindowHeight : '700'
+    });
+  </script>
 </body>
 
 </html>
