@@ -21,7 +21,7 @@
 
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu header-nav">
-            <a href="index.html" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
+            <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
                     <input type="text" placeholder="Search..." id="search-bar">
@@ -30,10 +30,10 @@
             </div>
 
             <div class="right menu">
-                <a class="item" href="index.html">Home</a>
-                <a class="item" href="explorer.html">Explore</a>
-                <a class="item" href="about.html">About</a>
-                <a class="item" href="contact.html">Contact</a>
+                <a class="item" href="<?= $base_url ?>">Home</a>
+                <a class="item" href="<?= $base_url ?>/home/explore">Explore</a>
+                <a class="item" href="<?= $base_url ?>/home/about">About</a>
+                <a class="item" href="<?= $base_url ?>/home/contact">Contact</a>
                 <span class="item delete-item"></span>
             </div>
         </div>
