@@ -19,6 +19,9 @@
 </head>
 
 <body>
+    <?php 
+      include('header_upload_view.php');
+     ?>
     <div class="ui container">
         <form class="ui form" method="post" action="upload/insert_data" enctype='multipart/form-data'>
           <div class="field">
