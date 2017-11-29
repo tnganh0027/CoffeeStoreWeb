@@ -36,6 +36,7 @@
             </div>
         </div>
     </div>
+
     <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
         <div class="ui centered grid">
             <div class="sixteen wide mobile sixteen wide tablet two wide computer column">
@@ -61,7 +62,7 @@
                                 <div class="content">
                                     <div class="header"><?= $value['name'] ?></div>
                                     <div class="meta">
-                                        <a href="infor.html"><?= $value['address'] ?></a>
+                                        <a href="<?= $base_url ?>/home/detail_store/<?= $value['id'] ?>"><?= $value['address'] ?></a>
                                     </div>
                                     <div class="description">
                                         <?= $value['about'] ?>
@@ -84,11 +85,31 @@
                     <div class="ui divider"></div>
                     <div class="ui pagination menu">
                         <?php 
+                            $uri = $_SERVER['REQUEST_URI'];
+                            $uri = explode('/',$uri);
+                            $current_page = end($uri);
+                            $current_page = $current_page - 1;
+     
                             for ($i = 0; $i < $data['page'] ; $i++) {
                                 ?>
-                                    <a class="active item">
+                                <?php 
+                                    if($i == $current_page)
+                                    {
+                                 ?>
+                                    <a class="item" href="<?= $base_url ?>/home/page/<?= $i + 1 ?>">
                                         <?= $i+1 ?>
                                     </a>
+                                <?php 
+                                    }
+                                    else {
+                                        ?>
+                                    <a class="active item" href="<?= $base_url ?>/home/page/<?= $i + 1 ?>">
+                                        <?= $i+1 ?>
+                                    </a>
+                                <?php
+                                    }
+                                  ?>
+                                    
                                 <?php
                             }
                          ?>

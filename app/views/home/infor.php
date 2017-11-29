@@ -51,61 +51,63 @@
 
             <!--INFORMATION PART-->
             <div class="row" id="inforpart">
-
+                <?php foreach ($data as $value): ?>
                 <div class="sixteen wide mobile sixteen wide tablet seven wide computer column">
-                    <img class="ui fluid image" src="../resources/images/coffee-present-pic.jpg">
+                    <img class="ui fluid image" src="<?= $value['image'] ?>">
                 </div>
 
                 <div class="sixteen wide mobile sixteen wide tablet nine wide computer column">
 
-                    <div class="ui breadcrumb">
+                    <!-- <div class="ui breadcrumb">
                         <a class="section">Home</a>
                         <i class="right angle icon divider"></i>
                         <a class="section">Store</a>
                         <i class="right angle icon divider"></i>
                         <div class="active section">T-Shirt</div>
-                    </div>
+                    </div> -->
 
                     <br><br>
+                   
+                        <div>
 
-                    <div>
+                            <h3><?= $value['name'] ?></h3>
 
-                        <h3>THE COFFEE HOUSE</h3>
+                            <div class="ui mini images relaxed devided">
+                                <a href="https://www.facebook.com/The.Coffee.House.2014/" class="ui image">
+                                    <img src="<?= $base_url ?>/images/fb.png" >
+                                </a>
 
-                        <div class="ui mini images relaxed devided">
-                            <a href="https://www.facebook.com/The.Coffee.House.2014/" class="ui image">
-                                <img src="../resources/images/fb.png" >
-                            </a>
+                                <a href="http://www.thecoffeehouse.com" class="ui image">
+                                    <img src="<?= $base_url ?>/images/home.ico">
+                                </a>
 
-                            <a href="http://www.thecoffeehouse.com" class="ui image">
-                                <img src="../resources/images/home.ico">
-                            </a>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+                            <h5> <i class="location arrow icon"></i> Address: <?= $value['address'] ?></h5>
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <h5> <i class="wait icon"></i> Opening time - Closing time: 7:30 AM - 10:00 PM. <a href="">(Opening)</a></h5>
 
                         </div>
-                    </div>
 
+                        <br>
 
-
-                    <div>
-                        <h5> <i class="location arrow icon"></i> Address: 123 Nguyen Oanh Street, Go Vap District, HCM city.</h5>
-                    </div>
-
-                    <br>
-
-                    <div>
-                        <h5> <i class="wait icon"></i> Opening time - Closing time: 7:30 AM - 10:00 PM. <a href="">(Opening)</a></h5>
-
-                    </div>
-
-                    <br>
-
-                    <div>
-                        <h5> <i class="dollar icon"></i> Average cost/a drink: 40.000 - 60.000 <span class="price">VNĐ.</span></h5>
-                    </div>
+                        <div>
+                            <h5> <i class="dollar icon"></i> Average cost/a drink: 40.000 - 60.000 <span class="price">VNĐ.</span></h5>
+                        </div>
+                    
+                    
 
                 </div>
-
-
+                <?php endforeach ?>
+            
             </div>
 
             <div class="ui divider"></div>
