@@ -51,7 +51,7 @@
 		{
 			$this->view('home/result');
 		}
-		
+
 		public function detail_store($id)
 		{
 			$data = $this->model('cfs_model');

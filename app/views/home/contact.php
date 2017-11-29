@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/contact.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
+    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
+    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
@@ -42,25 +44,27 @@
             <h1 class="ui dividing header">Write us</h1>
             <p>Please feel free to contact us by filling the form below. We will be in touch shortly.</p>
             <div class="ui divider"></div>
-            <div class="ui form">
+           
+            <form class="ui form" method="post" action="<?= $base_url ?>/Send_mail/doSend">
                 <div class="required field">
                     <label>Name</label>
-                    <input type="text">
+                    <input type="text" name="name">
                 </div>
                 <div class="ui divider"></div>
                 <div class="required field">
                     <label>Email</label>
-                    <input type="email">
+                    <input type="email" name="email">
                 </div>
                 <div class="ui divider"></div>
                 <div class="required field">
                     <label>Content</label>
-                    <textarea></textarea>
+                    <textarea name="content"></textarea>
                 </div>
-            </div>
+           
             <div class="ui divider"></div>
-            <div class="ui black button">Send</div>
+            <button  type="submit" class="ui black button">Send</button>
             <div class="ui divider"></div>
+            </form>
         </div>
     </div>
     <div class="ui inverted vertical footer segment">
@@ -98,6 +102,16 @@
                 window.open(url, '_self');
             }
         });
+    </script>
+    <script>
+    CKEDITOR.replace( 'content', {
+        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?Type=Images',
+        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl:  '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        filebrowserWindowWidth : '1000',
+        filebrowserWindowHeight : '700'
+    });
     </script>
 </body>
 
