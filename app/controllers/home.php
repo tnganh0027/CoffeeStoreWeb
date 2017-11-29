@@ -56,7 +56,10 @@
 		{
 			$data = $this->model('cfs_model');
 			$result = $data->getStoreById($id);
-			$this->view('home/infor',$result);
+			$some_images = $data->getSomeImages($result[0]['name']);
+			$result_array = array('detail' => $result,
+								'some_images' => $some_images);
+			$this->view('home/infor',$result_array);
 		}
 	}
  ?>

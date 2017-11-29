@@ -51,7 +51,7 @@
 
             <!--INFORMATION PART-->
             <div class="row" id="inforpart">
-                <?php foreach ($data as $value): ?>
+                <?php foreach ($data['detail'] as $value): ?>
                 <div class="sixteen wide mobile sixteen wide tablet seven wide computer column">
                     <img class="ui fluid image" src="<?= $value['image'] ?>">
                 </div>
@@ -570,61 +570,14 @@
                     <h2 class="ui header"> Some images</h2>
 
                 </div>
-
                 <div class="ui centered sixteen wide mobile sixteen wide tablet sixteen wide computer column">
 
                     <div class="ui grid centered small images gallery cf ">
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff1.jpg" />
-
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff2.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff3.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff4.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff5.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff6.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff7.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff8.jpeg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff9.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff10.jpg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff11.jpeg" />
-                        </div>
-
-                        <div>
-                            <img class="ui image" src="../resources/images/gcoff12.jpg" />
-                        </div>
-
-
+                        <?php foreach ($data['some_images'] as $value): ?>
+                            <div>
+                                <img class="ui image" src="<?= $value['FileName'] ?>" />
+                            </div>
+                        <?php endforeach ?>
                     </div>
 
                 </div>

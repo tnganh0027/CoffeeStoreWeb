@@ -58,10 +58,32 @@
 			return FALSE; 
 		}
 
+		public function insertSomeImages($FilePath,$newFileName,$name_store)
+		{
+			include(__DIR__.'\..\database.php');
+			$sql = "INSERT INTO userfiles (FilePath, FileName, name_store)
+					VALUES ('$FilePath','$newFileName','$name_store');";
+			if($conn->multi_query($sql) === TRUE)
+				return TRUE;
+			return FALSE;
+		}
+
 		public function getStoreById($id)
 		{
 			include(__DIR__.'\..\database.php');
 			$sql = "SELECT * FROM cfs_data WHERE id = $id";
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+			return $rows;
+		}
+
+		public function getSomeImages($name)
+		{
+			include(__DIR__.'\..\database.php');
+			$sql = "SELECT FileName FROM userfiles WHERE userfiles.name_store = '$name'";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array())
 			{

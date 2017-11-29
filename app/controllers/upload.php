@@ -24,27 +24,27 @@
 			if(isset($_POST["submit"])) {
 			    $check = getimagesize($_FILES["image"]["tmp_name"]);
 			    if($check !== false) {
-			        echo "File is an image - " . $check["mime"] . ".";
+			        //echo "File is an image - " . $check["mime"] . ".";
 			        $uploadOk = 1;
 			    } else {
-			        echo "File is not an image.";
+			        //echo "File is not an image.";
 			        $uploadOk = 0;
 			    }
 			}
 			// Check if file already exists
 			if (file_exists($target_file)) {
-			    echo "Sorry, file already exists.";
+			    //echo "Sorry, file already exists.";
 			    $uploadOk = 0;
 			}
 			// Check file size
 			if ($_FILES["image"]["size"] > 500000) {
-			    echo "Sorry, your file is too large.";
+			    //echo "Sorry, your file is too large.";
 			    $uploadOk = 0;
 			}
 			// Allow certain file formats
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 			&& $imageFileType != "gif" ) {
-			    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+			    //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
 			    $uploadOk = 0;
 			}
 			// Check if $uploadOk is set to 0 by an error
@@ -53,9 +53,9 @@
 			// if everything is ok, try to upload file
 			} else {
 			    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {  /*$target_file*/
-			        echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+			        //echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
 			    } else {
-			        echo "Sorry, there was an error uploading your file.";
+			        //echo "Sorry, there was an error uploading your file.";
 			    }
 			}
 			/*              */
@@ -63,6 +63,63 @@
 			$base_url = 'http://localhost/CoffeeStoreWeb/public/';
 			$image = $base_url . "uploads/" . basename($_FILES["image"]["name"]);
 
+
+
+			/*		insert some images */
+			$errors = array();
+			
+			$extension = array("jpeg","jpg","png","gif");
+			
+			$bytes = 1000000;
+			$allowedKB = 100;
+			$totalBytes = $allowedKB * $bytes;
+			
+			//$conn = mysqli_connect("localhost","root","","phpfiles");	
+			$target = $destination_path. '\\' . 'some_images';
+			foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name)
+			{
+				$uploadThisFile = true;
+				
+				$file_name=$_FILES["files"]["name"][$key];
+				$file_tmp=$_FILES["files"]["tmp_name"][$key];
+				
+				$ext=pathinfo($file_name,PATHINFO_EXTENSION);
+
+				if(!in_array(strtolower($ext),$extension))
+				{
+					array_push($errors, "File type is invalid. Name:- ".$file_name);
+					$uploadThisFile = false;
+				}				
+				
+				if($_FILES["files"]["size"][$key] > $totalBytes){
+					array_push($errors, "File size must be less than 1MB. Name:- ".$file_name);
+					$uploadThisFile = false;
+				}
+				
+				if(file_exists("some_images/".$_FILES["files"]["name"][$key]))
+				{
+					array_push($errors, "File is already exist. Name:- ". $file_name);
+					$uploadThisFile = false;
+				}
+				
+				if($uploadThisFile){
+					$filename=basename($file_name,$ext);
+					$newFileName=$filename.$ext;				
+					move_uploaded_file($_FILES["files"]["tmp_name"][$key],"$target\\".$newFileName);
+					
+					//$query = "INSERT INTO UserFiles(FilePath, FileName) VALUES('Upload','".$newFileName."')";
+					$some_images = $base_url . "some_images/" . $newFileName;
+					$data = $this->model('cfs_model');
+					$result = $data->insertSomeImages('some_images',$some_images,$name);
+					//mysqli_query($conn, $query);
+					if($result == FALSE)
+					{
+						echo 'Failure';
+						return;
+					}		
+				}
+			}
+			
 			$data = $this->model('cfs_model');
 			if($data->insertData($name,$address,$about,$view,$star,$image,$content))
 			{

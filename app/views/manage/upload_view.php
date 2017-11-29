@@ -51,8 +51,13 @@
             <input type="number" name="star" placeholder="Star">
           </div>
           <div class="field">
-            <label>Image</label>
+            <label>Description Image</label>
             <input type="file" name="image">
+          </div>
+          <div class="field">
+            <label>Some Images</label>
+            <input type="file" name="files[]" multiple="multiple">
+            <p class="ui red message">NOTE: Please, Select the only images (.jpg, .jpeg, .png, .gif) to upload with the size of 100KB only.</p>
           </div>
           <div class="ui right aligned grid">
             <div class="center aligned two column row">
