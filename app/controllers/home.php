@@ -5,7 +5,7 @@
 
 		public function __construct() 
 		{
-			$this->total_store_in_onepage = 1;
+			$this->total_store_in_onepage = 6;
 		}
 
 		public function index()

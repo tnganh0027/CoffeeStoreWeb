@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2017 at 04:14 AM
+-- Generation Time: Nov 29, 2017 at 04:23 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -58,6 +58,7 @@ CREATE TABLE `cfs_data` (
   `image` text COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
   `about` text COLLATE utf8_unicode_ci NOT NULL,
   `view` int(11) NOT NULL,
   `star` float NOT NULL
@@ -67,9 +68,14 @@ CREATE TABLE `cfs_data` (
 -- Dumping data for table `cfs_data`
 --
 
-INSERT INTO `cfs_data` (`id`, `image`, `name`, `address`, `about`, `view`, `star`) VALUES
-(1, 'http://localhost/CoffeeStoreWeb/public/uploads/17308764_1879495292322136_2284954227869868252_n.jpg', 'Coffee House Cao Thắng', '86 - 88, Cao Thắng, Quận 3, TP. HCM', '\"Đi cà phê\" từ lâu không đơn thuần chỉ là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại The Coffee House, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng.', 12, 4),
-(2, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-h1-jpg-888-635974314774218377.jpg', 'Rooftop Grand Lounge', 'Tầng 20 Grand Hotel, 8 Đồng Khởi,  Quận 1, TP. HCM', 'MỘT BUỔI TIỆC BUFFET TUYỆT VỜI CÙNG GRAND HOTEL SÀI GÒN', 42, 8);
+INSERT INTO `cfs_data` (`id`, `image`, `name`, `address`, `content`, `about`, `view`, `star`) VALUES
+(1, 'http://localhost/CoffeeStoreWeb/public/uploads/17308764_1879495292322136_2284954227869868252_n.jpg', 'Coffee House Cao Thắng', '86 - 88, Cao Thắng, Quận 3, TP. HCM', '', 'Café/Dessert', 12, 4),
+(2, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-h1-jpg-888-635974314774218377.jpg', 'Rooftop Grand Lounge', 'Tầng 20 Grand Hotel, 8 Đồng Khởi,  Quận 1, TP. HCM', '', 'Café/Dessert', 42, 3),
+(3, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-wevwev-jpg-126-636335639676795774.jpg', 'Koi Thé Café - Cao Thắng Plaza', 'Cao Thắng Plaza, 19 Cao Thắng, Quận 3, TP. HCM', '', 'Café/Dessert', 4, 5),
+(4, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-z5clijri-jpg.jpg', 'The Alley - Trà Sữa Đài Loan - Hồ Tùng Mậu', '114 Hồ Tùng Mậu, Quận 1, TP. HCM', '', 'Café/Dessert - Đài Loan', 4, 4),
+(5, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-untitled-8-jpg-390-636143871176071590.jpg', 'HD Gia Lai Coffee - 24h', '119 Cống Quỳnh, P. Nguyễn Cư Trinh, Quận 1, TP. HCM', '', 'CAFÉ/DESSERT', 42, 3),
+(6, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-8-jpg.jpg', 'The World Of Heineken', '36 Hồ Tùng Mậu,  Quận 1, TP. HCM', '', 'Khu Ẩm Thực - Việt Nam - Nhóm hội, Giới văn phòng', 40, 4),
+(7, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-tra-sua-gong-cha-phan-xich-long-830-636356488379404284.jpg', 'Trà Sữa Gong Cha', '240 Phan Xích Long, P. 7,  Quận Phú Nhuận, TP. HCM', '', 'Café/Dessert', 41, 4);
 
 --
 -- Indexes for dumped tables
@@ -100,7 +106,7 @@ ALTER TABLE `cfm_data`
 -- AUTO_INCREMENT for table `cfs_data`
 --
 ALTER TABLE `cfs_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
