@@ -51,13 +51,13 @@
 			return $rows;
 		}
 
-		public function insertData($name,$address,$about,$view=0,$star=0,$image,$content)
+		public function insertData($name,$address,$about,$view=0,$star=0,$image,$content,$open,$average_cost)
 		{
 			$path = str_replace('\\', '/', __DIR__);
 			include($path.'/../database.php');
 
-			$sql = "INSERT INTO cfs_data (image, name, address, content, about, view, star)
-					VALUES ('$image', '$name', '$address','$content', '$about', '$view', '$star');";
+			$sql = "INSERT INTO cfs_data (image, name, address, open, average_cost, content, about, view, star)
+					VALUES ('$image', '$name', '$address', '$open', '$average_cost', '$content', '$about', '$view', '$star');";
 			if($conn->multi_query($sql) === TRUE)
 				return TRUE;
 			return FALSE; 
@@ -101,6 +101,18 @@
 				$rows[] = $row;
 			}
 			return $rows;
+		}
+
+		public function updateViewById($id)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			$sql = "UPDATE cfs_data SET view = view + 1 WHERE id=$id";
+			if ($conn->query($sql) === TRUE) {
+				return TRUE;
+			}
+			return FALSE;
 		}
 	}
 

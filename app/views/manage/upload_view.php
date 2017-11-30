@@ -35,6 +35,14 @@
             <input type="text" name="address" placeholder="Address">
           </div>
           <div class="field">
+            <label>Open</label>
+            <input type="text" name="open" placeholder="Open time">
+          </div>
+          <div class="field">
+            <label>Average Cost</label>
+            <input type="text" name="average_cost" placeholder="Average Cost">
+          </div>
+          <div class="field">
             <label>About</label>
             <input type="text" name="about" placeholder="About">
           </div>
@@ -48,7 +56,7 @@
           </div>
           <div class="field">
             <label>Star</label>
-            <input type="number" name="star" placeholder="Star">
+            <input type="number" name="star" placeholder="Star" step="0.01">
           </div>
           <div class="field">
             <label>Description Image</label>
@@ -57,7 +65,7 @@
           <div class="field">
             <label>Some Images</label>
             <input type="file" name="files[]" multiple="multiple">
-            <p class="ui red message">NOTE: Please, Select the only images (.jpg, .jpeg, .png, .gif) to upload with the size of 100KB only.</p>
+            <p class="ui red message">NOTE: Please, Select the only images (.jpg, .jpeg, .png, .gif) to upload with the size of 1MB only. Should upload 12 images for the best render !</p>
           </div>
           <div class="ui right aligned grid">
             <div class="center aligned two column row">

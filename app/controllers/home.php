@@ -55,6 +55,7 @@
 		public function detail_store($id)
 		{
 			$data = $this->model('cfs_model');
+			$update = $data->updateViewById($id);
 			$result = $data->getStoreById($id);
 			$some_images = $data->getSomeImages($result[0]['name']);
 			$result_array = array('detail' => $result,

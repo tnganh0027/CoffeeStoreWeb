@@ -14,6 +14,8 @@
 			$view = $_POST['view'];
 			$star = $_POST['star'];
 			$content = $_POST['content'];
+			$open = $_POST['open'];
+			$average_cost = $_POST['average_cost'];
 			
 			/* Upload image */
 			$destination_path = getcwd().DIRECTORY_SEPARATOR;
@@ -113,22 +115,22 @@
 					$data = $this->model('cfs_model');
 					$result = $data->insertSomeImages('some_images',$some_images,$name);
 					//mysqli_query($conn, $query);
-					if($result == FALSE)
+					if($result === FALSE)
 					{
-						echo 'Failure';
+						echo 'Failure up anh khong thanh cong';
 						return;
 					}		
 				}
 			}
 			
 			$data = $this->model('cfs_model');
-			if($data->insertData($name,$address,$about,$view,$star,$image,$content))
+			if($data->insertData($name,$address,$about,$view,$star,$image,$content,$open,$average_cost))
 			{
 				echo 'Done';
 			}
 			else 
 			{
-				echo 'Failure';
+				echo 'Failure ! Insert khong thanh cong';
 			}
 		}
 

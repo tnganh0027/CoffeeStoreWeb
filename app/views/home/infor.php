@@ -93,14 +93,14 @@
                         <br>
 
                         <div>
-                            <h5> <i class="wait icon"></i> Opening time - Closing time: 7:30 AM - 10:00 PM. <a href="">(Opening)</a></h5>
+                            <h5> <i class="wait icon"></i> Opening time - Closing time: <?= $value['open'] ?> <a href="">(Opening)</a></h5>
 
                         </div>
 
                         <br>
 
                         <div>
-                            <h5> <i class="dollar icon"></i> Average cost/a drink: 40.000 - 60.000 <span class="price">VNĐ.</span></h5>
+                            <h5> <i class="dollar icon"></i> Average cost/a drink: <?= $value['average_cost'] ?> <span class="price"></span></h5>
                         </div>
                     
                     
@@ -590,32 +590,12 @@
             <div class="row">
                 <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                     <h2 class="ui header">Extra informations</h2>
-                    <div class="ui four column doubling grid">
+                    <div class="ui column doubling grid">
                         <div class="column">
-                            <p><i class="checkmark icon"></i>Free parking place.</p>
+                            <?php foreach ($data['detail'] as $value): ?>
+                                <p><?= $value['content'] ?></p>
+                            <?php endforeach ?>
                         </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Strong Internet access.</p>
-                        </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Electrical plugs.</p>
-                        </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Nice view on roof top.</p>
-                        </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Good for team meeting.</p>
-                        </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Support Office tool(Pen, board).</p>
-                        </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Lovely staffs.</p>
-                        </div>
-                        <div class="column">
-                            <p><i class="checkmark icon"></i>Recieve booking table for event.</p>
-                        </div>
-
                     </div>
                 </div>
 
@@ -783,8 +763,8 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script type="text/javascript" src="../resources/js/semantic.js"></script>
-    <script type="text/javascript" src="../resources/js/infor.js"></script>
+    <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
+    <script type="text/javascript" src="<?= $base_url ?>/js/infor.js"></script>
 
 </body>
 
