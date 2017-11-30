@@ -4,7 +4,8 @@
 	{
 		public function getData($total_store_in_onepage)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
 			$sql = "SELECT * FROM cfs_data LIMIT $total_store_in_onepage OFFSET 0";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array())
@@ -17,7 +18,8 @@
 
 		public function totalPage($total_store_in_onepage)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
 			$sql = "SELECT * FROM cfs_data";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array())
@@ -34,7 +36,8 @@
 
 		public function loadStore($page,$total_store_in_onepage)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
 
 			//position
 			$offset = ($page-1)* $total_store_in_onepage;
@@ -50,7 +53,9 @@
 
 		public function insertData($name,$address,$about,$view=0,$star=0,$image,$content)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
 			$sql = "INSERT INTO cfs_data (image, name, address, content, about, view, star)
 					VALUES ('$image', '$name', '$address','$content', '$about', '$view', '$star');";
 			if($conn->multi_query($sql) === TRUE)
@@ -60,7 +65,9 @@
 
 		public function insertSomeImages($FilePath,$newFileName,$name_store)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
 			$sql = "INSERT INTO userfiles (FilePath, FileName, name_store)
 					VALUES ('$FilePath','$newFileName','$name_store');";
 			if($conn->multi_query($sql) === TRUE)
@@ -70,7 +77,9 @@
 
 		public function getStoreById($id)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
 			$sql = "SELECT * FROM cfs_data WHERE id = $id";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array())
@@ -82,7 +91,9 @@
 
 		public function getSomeImages($name)
 		{
-			include(__DIR__.'\..\database.php');
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+			
 			$sql = "SELECT FileName FROM userfiles WHERE userfiles.name_store = '$name'";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array())

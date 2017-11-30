@@ -17,7 +17,8 @@
 			
 			/* Upload image */
 			$destination_path = getcwd().DIRECTORY_SEPARATOR;
-			$target_file = $destination_path . '\\' . 'uploads' . '\\' . basename( $_FILES["image"]["name"]);
+			$destination_path = str_replace('\\', '/', $destination_path);
+			$target_file = $destination_path . '/' . 'uploads' . '/' . basename( $_FILES["image"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			// Check if image file is a actual image or fake image
@@ -75,7 +76,7 @@
 			$totalBytes = $allowedKB * $bytes;
 			
 			//$conn = mysqli_connect("localhost","root","","phpfiles");	
-			$target = $destination_path. '\\' . 'some_images';
+			$target = $destination_path. '/' . 'some_images';
 			foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name)
 			{
 				$uploadThisFile = true;
@@ -105,7 +106,7 @@
 				if($uploadThisFile){
 					$filename=basename($file_name,$ext);
 					$newFileName=$filename.$ext;				
-					move_uploaded_file($_FILES["files"]["tmp_name"][$key],"$target\\".$newFileName);
+					move_uploaded_file($_FILES["files"]["tmp_name"][$key],"$target/".$newFileName);
 					
 					//$query = "INSERT INTO UserFiles(FilePath, FileName) VALUES('Upload','".$newFileName."')";
 					$some_images = $base_url . "some_images/" . $newFileName;
@@ -147,7 +148,8 @@
 
 			/* Upload image */
 			$destination_path = getcwd().DIRECTORY_SEPARATOR;
-			$target_file = $destination_path . '\\' . 'uploads' . '\\' . basename( $_FILES["image"]["name"]);
+			$destination_path = str_replace('\\', '/', $destination_path);
+			$target_file = $destination_path . '/' . 'uploads' . '/' . basename( $_FILES["image"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			// Check if image file is a actual image or fake image

@@ -95,6 +95,7 @@ z-index: 1;
 transform: scale(3.0, 3.0);
 -webkit-transition: .3s transform;
 transition: .3s transform;
+z-index: 1;
 =======
 =======
 >>>>>>> 8c80a1d769574cbea1bd8d0d4c81442d581e4b55
