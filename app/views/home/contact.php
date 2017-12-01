@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="ui top align selection list" id="result" style="text-align: center;display:fixed">
+    <div class="ui top align selection list" id="result" style="text-align: center;">
     </div>
    
     
@@ -118,11 +118,7 @@
         $(document).ready(function(){
             $('#search_text').keyup(function(){
                 var txt = $(this).val();
-                if(txt == '')
-                {
-
-                }
-                else
+                if(txt != '' && txt.length > 3)
                 {
                     $('#result').html('');
                     $.ajax({
@@ -135,7 +131,9 @@
                             $('#result').html(data);
                         }
                     });
-                    
+                }
+                else
+                {                   
                 }
             });
         });
