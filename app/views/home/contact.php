@@ -17,19 +17,21 @@
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
     <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
     <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
+    
 </head>
 
 <body>
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
-            <div class="item" style="width: 30%;">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search-bar">
-                    <i class="search link icon" id="search-icon"></i>
+                <div class="ui search item" style="width: 30%;">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search..." id="search_text">
+                        <i class="search link icon" id="search-icon"></i>
+                        
+                    </div>
                 </div>
-            </div>
-
+                
             <div class="right menu">
                 <a class="item" href="<?= $base_url ?>">Home</a>
                 <a class="item" href="<?= $base_url ?>/home/explore">Explore</a>
@@ -39,6 +41,12 @@
             </div>
         </div>
     </div>
+
+    <div class="ui top align selection list" id="result" style="text-align: center;display:fixed">
+    </div>
+   
+    
+
     <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
         <div class="ui segment">
             <h1 class="ui dividing header">Write us</h1>
@@ -92,6 +100,7 @@
             <h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
         </div>
     </div>
+
     <script>
         $('#search-icon').click(function(e) {
             e.preventDefault();
@@ -103,6 +112,35 @@
             }
         });
     </script>
+
+    <script>
+        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+        $(document).ready(function(){
+            $('#search_text').keyup(function(){
+                var txt = $(this).val();
+                if(txt == '')
+                {
+
+                }
+                else
+                {
+                    $('#result').html('');
+                    $.ajax({
+                        url:  base_url+'/home/doSearch',
+                        type: 'post',
+                        dataType: 'text',
+                        data: {search: txt},
+                        success:function(data)
+                        {
+                            $('#result').html(data);
+                        }
+                    });
+                    
+                }
+            });
+        });
+    </script>
+
     <script>
     CKEDITOR.replace( 'content', {
         filebrowserBrowseUrl: '/ckfinder/ckfinder.html',

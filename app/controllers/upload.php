@@ -117,7 +117,7 @@
 					//mysqli_query($conn, $query);
 					if($result === FALSE)
 					{
-						echo 'Failure up anh khong thanh cong';
+						echo 'Failure';
 						return;
 					}		
 				}
@@ -130,7 +130,7 @@
 			}
 			else 
 			{
-				echo 'Failure ! Insert khong thanh cong';
+				echo 'Failure';
 			}
 		}
 

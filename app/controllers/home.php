@@ -62,5 +62,15 @@
 								'some_images' => $some_images);
 			$this->view('home/infor',$result_array);
 		}
+
+		public function doSearch()
+		{
+			$name = $_POST['search'];
+			$data = $this->model('cfs_model');
+			$result = $data->getStore($name);
+			if($result != FALSE){
+				echo $result;
+			}
+		}
 	}
  ?>

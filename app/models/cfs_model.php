@@ -114,6 +114,33 @@
 			}
 			return FALSE;
 		}
+
+		public function getStore($name)
+		{
+			$base_url = 'http://localhost/CoffeeStoreWeb/public';
+			$content = '';
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+			$sql = "SELECT * FROM cfs_data WHERE name LIKE '%".$name."%'";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_array())
+				{
+					$content .= '<div class="item">';
+					$content .= '<img class="ui avatar image" src="'.$row['image'].'">';
+					$content .= '<div class="content">';
+					$content .= '<a class="header" href="'.$base_url.'/home/detail_store/'.$row['id'].'">'.$row['name'].'</a>';
+					$content .= '<div class="description">'.$row['address'].'</div>';
+					$content .= '</div></div>';
+				}
+
+				return $content;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
 	}
 
  ?>
