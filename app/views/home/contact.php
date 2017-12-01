@@ -101,18 +101,8 @@
         </div>
     </div>
 
-    <script>
-        $('#search-icon').click(function(e) {
-            e.preventDefault();
-            if ($('#search-bar').val() === '') {
-                //do something
-            } else {
-                var url = 'result.html';
-                window.open(url, '_self');
-            }
-        });
-    </script>
-
+    
+    
     <script>
         var base_url = 'http://localhost/CoffeeStoreWeb/public';
         $(document).ready(function(){

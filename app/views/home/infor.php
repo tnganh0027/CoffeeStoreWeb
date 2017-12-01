@@ -607,8 +607,9 @@
             <div class="row">
 
                 <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-                    <div class="ui comments">
-                        <h2 class="ui header">Comments</h2>
+                    <h2 class="ui header">Comments</h2>
+                    <div class="ui comments" id="comments">
+                        
                         <div class="comment">
                             <a class="avatar">
                                 <img src="../resources/images/ava1.jpg">
@@ -762,6 +763,18 @@
             <h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+             $.ajax({
+                crossOrigin: true,
+                method:'post',
+                url: 'https://www.foody.vn/ho-chi-minh/tra-sua-gong-cha',
+                success: function(data) {
+                    console.log(data);
+                    }
+                });
+            });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/infor.js"></script>
