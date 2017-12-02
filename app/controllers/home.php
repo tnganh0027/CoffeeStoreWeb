@@ -37,6 +37,11 @@
 			$this->view('home/explorer', $result_array);
 		}
 
+		public function login()
+		{
+			$this->view('home/login');
+		}
+
 		public function page($page)
 		{
 			$data = $this->model('cfs_model');
@@ -58,8 +63,10 @@
 			$update = $data->updateViewById($id);
 			$result = $data->getStoreById($id);
 			$some_images = $data->getSomeImages($result[0]['name']);
+			$menu = $data->getMenu($result[0]['name']);
 			$result_array = array('detail' => $result,
-								'some_images' => $some_images);
+								'some_images' => $some_images,
+								'menu' => $menu);
 			$this->view('home/infor',$result_array);
 		}
 
@@ -71,6 +78,26 @@
 			if($result != FALSE){
 				echo $result;
 			}
+		}
+
+		public function doExplorePopular()
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->getResultView($this->total_store_in_onepage);
+			$page = $data->totalResultView($this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('home/explorepopular', $result_array);
+		}
+
+		public function doExplorePopularPage($page)
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->loadStoreResultView($page,$this->total_store_in_onepage);
+			$page = $data->totalResultView($this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('home/explorepopular', $result_array);
 		}
 	}
  ?>

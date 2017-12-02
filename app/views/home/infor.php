@@ -124,436 +124,39 @@
                 <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column ">
                     <h2 class="ui header"> Store's Menu</h2>
                     <div class="ui link four stackable cards">
-
-                        <div class="card card1">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Frothy Hot Chocolate</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="ui popup pop1">
-                            <div class="ui green card">
+                        <?php $count = 0; ?>
+                        <?php foreach ($data['menu'] as $key => $value): ?>
+                            <?php $count++; ?>
+                            <div class="card card<?=$count?>"> 
                                 <div class="content">
-                                    <div class="header">Recipe</div>
+                                    <a class="header"><?= $value['name'] ?></a>
+                                    <div class="meta">
+                                            price:
+                                            <span class="price">
+                                                <?= $value['price'] ?>
+                                            </span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="ui popup pop<?=$count?>">
+                                <div class="ui green card">
+                                    <div class="content">
+                                        <div class="header">Recipe</div>
 
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
+                                        <div class="description">
+                                            <p>
+                                                <?= $value['recipe'] ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <i class="check icon"></i>
+                                        <?= $data['detail'][0]['name'] ?>
                                     </div>
                                 </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
                             </div>
-                        </div>
-
-
-                        <div class="card card2">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Peppermint Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop2">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>6 tablespoons coffee/espresso</p>
-                                        <p>8 ounces water</p>
-                                        <p>13 ounces milk</p>
-                                        <p>10 to 18 round candies</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="card card3">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Amaretto Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop3">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>6 tablespoons coffee/espresso</p>
-                                        <p>8 ounces water</p>
-                                        <p>Ingredients in pitcher</p>
-                                        <p>13 ounces milk</p>
-                                        <p>3 tablespoons sugar</p>
-                                        <p>2 tablespoons Amaretto</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="card card4">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop4">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="card card5">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop5">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="card card6">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop6">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="card card7">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                    price:
-                                    <span class="price">
-                                        30.000 VNĐ
-                                    </span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop7">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="card card8">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop8">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="card card9">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop9">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="card card10">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop10">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="card card11">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop11">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="card card12">
-                            <div class="image">
-                                <img src="../resources/images/item-coffee1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Latte</a>
-                                <div class="meta">
-                                        price:
-                                        <span class="price">
-                                            30.000 VNĐ
-                                        </span>
-                                    </div>
-
-                            </div>
-
-                        </div>
-                        <div class="ui popup pop12">
-                            <div class="ui green card">
-                                <div class="content">
-                                    <div class="header">Recipe</div>
-
-                                    <div class="description">
-                                        <p>13 ounces milk</p>
-                                        <p>1/3 cup semi-sweet chocolate chips, melted</p>
-                                        <p>2 teaspoons sugar</p>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <i class="check icon"></i> 121 liked
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
+                        <?php endforeach ?>
+                        
                     </div>
                 </div>
 
@@ -774,6 +377,39 @@
                     }
                 });
             });
+    </script>
+
+    <script>
+        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+        $(document).ready(function(){
+            $('#search_text').keyup(function(){
+                var txt = $(this).val();
+                 $('#result').html('');
+                if(txt != '' && txt.length > 3)
+                {
+                    $.ajax({
+                        url: base_url+'/home/doSearch',
+                        type: 'POST',
+                        dataType: 'text',
+                        data: {search: txt},
+                    })
+                    .done(function() {
+                        //$('#result').html(data);
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function(data) {
+                        console.log("complete");
+                        $('#result').html(data);
+                    });  
+                }
+                else
+                {                   
+                }
+            });
+        });
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>

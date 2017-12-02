@@ -96,14 +96,14 @@
                                     if($i == $current_page)
                                     {
                                  ?>
-                                    <a class="item" href="<?= $base_url ?>/home/page/<?= $i + 1 ?>">
+                                    <a class="item" href="<?= $base_url ?>/home/doExplorePopularPage/<?= $i + 1 ?>">
                                         <?= $i+1 ?>
                                     </a>
                                 <?php 
                                     }
                                     else {
                                         ?>
-                                    <a class="active item" href="<?= $base_url ?>/home/page/<?= $i + 1 ?>">
+                                    <a class="active item" href="<?= $base_url ?>/home/doExplorePopularPage/<?= $i + 1 ?>">
                                         <?= $i+1 ?>
                                     </a>
                                 <?php

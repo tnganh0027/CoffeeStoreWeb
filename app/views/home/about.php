@@ -226,6 +226,39 @@
             }
         });
     </script>
+
+    <script>
+        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+        $(document).ready(function(){
+            $('#search_text').keyup(function(){
+                var txt = $(this).val();
+                 $('#result').html('');
+                if(txt != '' && txt.length > 3)
+                {
+                    $.ajax({
+                        url: base_url+'/home/doSearch',
+                        type: 'POST',
+                        dataType: 'text',
+                        data: {search: txt},
+                    })
+                    .done(function() {
+                        //$('#result').html(data);
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function(data) {
+                        console.log("complete");
+                        $('#result').html(data);
+                    });  
+                }
+                else
+                {                   
+                }
+            });
+        });
+
+    </script>
 </body>
 
 </html>

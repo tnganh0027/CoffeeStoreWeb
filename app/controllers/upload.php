@@ -1,6 +1,13 @@
 <?php 
 	class Upload extends Controller
 	{
+		protected $total_store_in_onepage;
+
+		public function __construct() 
+		{
+			$this->total_store_in_onepage = 6;
+		}
+
 		public function index()
 		{
 			$this->view('manage/upload_view');
@@ -207,5 +214,44 @@
 				echo 'Failure';
 			}
 		}
+
+		public function viewStore()
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->getData($this->total_store_in_onepage);
+			$page = $data->totalPage($this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('manage/coffee_view', $result_array);
+		}
+
+		public function page($page)
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->loadStore($page,$this->total_store_in_onepage);
+			$page = $data->totalPage($this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('manage/coffee_view', $result_array);
+		}
+
+		public function addMenu($id_store)
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->getStoreById($id_store);
+			$this->view('manage/upload_menu',$result);
+		}
+
+		public function doAdd()
+		{
+			$name = $_POST['name'];
+			$price = $_POST['price'];
+			$recipe = $_POST['recipe'];
+			$name_store = $_POST['name_store'];
+			$data = $this->model('cfs_model');
+			$result = $data->insertMenu($name,$recipe,$price,$name_store);
+			//echo json_encode($result);
+		}
+
 	}
  ?>

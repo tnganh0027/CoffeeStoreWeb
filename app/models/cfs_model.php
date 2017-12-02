@@ -132,14 +132,90 @@
 					$content .= '<a class="header" href="'.$base_url.'/home/detail_store/'.$row['id'].'">'.$row['name'].'</a>';
 					$content .= '<div class="description">'.$row['address'].'</div>';
 					$content .= '</div></div>';
+					
 				}
-
 				return $content;
 			}
 			else
 			{
 				return FALSE;
 			}
+		}
+
+		public function totalResultView($total_store_in_onepage)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+			$sql = "SELECT * FROM cfs_data WHERE 2*view > (SELECT MAX(view) FROM cfs_data)";
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+
+			/* divide into small page */
+
+			$total_store = count($rows);
+			$total_page = ceil($total_store/$total_store_in_onepage);
+			return $total_page;
+		}
+
+		public function getResultView($total_store_in_onepage)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+			$sql = "SELECT * FROM cfs_data WHERE 2*view > (SELECT MAX(view) FROM cfs_data) LIMIT $total_store_in_onepage OFFSET 0";
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+			return $rows;
+		}
+
+		public function loadStoreResultView($page,$total_store_in_onepage)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			//position
+			$offset = ($page-1)* $total_store_in_onepage;
+			$sql = "SELECT * FROM cfs_data WHERE 2*view > (SELECT MAX(view) FROM cfs_data) LIMIT $total_store_in_onepage OFFSET $offset";
+
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+			return $rows;
+		}
+
+		public function insertMenu($name,$recipe,$price,$name_store)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			$sql = "INSERT INTO cfs_menu (name, recipe, price, name_store)
+					VALUES ('$name', '$recipe', '$price', '$name_store');";
+			if($conn->multi_query($sql) === TRUE){
+				$last_id = $conn->insert_id;
+				return $last_id;
+			}
+		}
+
+		public function getMenu($name_store)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			$sql = "SELECT * FROM cfs_menu WHERE name_store = '$name_store'";
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+			return $rows;
+
 		}
 	}
 

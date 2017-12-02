@@ -17,7 +17,6 @@
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
     <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
     <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
-    
 </head>
 
 <body>
@@ -26,9 +25,8 @@
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
                 <div class="ui search item" style="width: 30%;">
                     <div class="ui icon input">
-                        <input type="text" placeholder="Search..." id="search_text">
-                        <i class="search link icon" id="search-icon"></i>
-                        
+                        <input type="text" placeholder="Search..." id="search_text" autocomplete="off">
+                        <i class="search link icon" id="search-icon"></i>        
                     </div>
                 </div>
                 
@@ -42,12 +40,12 @@
         </div>
     </div>
 
-    <div class="ui top align selection list" id="result" style="text-align: center;">
+    <div class="ui top align selection list" id="result" style="text-align: center;z-index: 9999;">
     </div>
    
     
 
-    <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
+    <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;z-index: -9999;">
         <div class="ui segment">
             <h1 class="ui dividing header">Write us</h1>
             <p>Please feel free to contact us by filling the form below. We will be in touch shortly.</p>
@@ -108,25 +106,32 @@
         $(document).ready(function(){
             $('#search_text').keyup(function(){
                 var txt = $(this).val();
+                 $('#result').html('');
                 if(txt != '' && txt.length > 3)
                 {
-                    $('#result').html('');
                     $.ajax({
-                        url:  base_url+'/home/doSearch',
-                        type: 'post',
+                        url: base_url+'/home/doSearch',
+                        type: 'POST',
                         dataType: 'text',
                         data: {search: txt},
-                        success:function(data)
-                        {
-                            $('#result').html(data);
-                        }
-                    });
+                    })
+                    .done(function() {
+                        //$('#result').html(data);
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function(data) {
+                        console.log("complete");
+                        $('#result').html(data);
+                    });  
                 }
                 else
                 {                   
                 }
             });
         });
+
     </script>
 
     <script>
