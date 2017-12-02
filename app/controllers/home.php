@@ -99,5 +99,10 @@
 								'page' => $page);
 			$this->view('home/explorepopular', $result_array);
 		}
+
+		public function doLogin()
+		{
+			
+		}
 	}
  ?>

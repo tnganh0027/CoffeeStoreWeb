@@ -55,7 +55,7 @@
 	        Log-in to your account
 	      </div>
 	    </h2>
-	    <form action="https://s.codepen.io/voltron2112/debug/PqrEPM?" method="get" class="ui large form">
+	    <form action="<?= base_url ?>/home/doLogin" method="post" class="ui large form">
 	      <div class="ui stacked secondary  segment">
 	        <div class="field">
 	          <div class="ui left icon input">
@@ -77,7 +77,7 @@
 	    </form>
 
 	    <div class="ui message">
-	      New to us? <a href="https://s.codepen.io/voltron2112/debug/PqrEPM?">Register</a>
+	      New to us? <a href="">Register</a>
 	    </div>
 	  </div>
 	</div>
