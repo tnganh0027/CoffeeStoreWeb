@@ -34,7 +34,7 @@
                     <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
                     <i class="search link icon" id="search-icon"></i>        
                 </div>
-
+            </div>
             <div class="right menu">
                 <?php
                     $save = '';
@@ -295,13 +295,17 @@
 
 
     <script>
-        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+       var base_url = 'http://localhost/CoffeeStoreWeb/public';
         $(document).ready(function(){
+            
+            $('#update').html('');
+            var timeout = null;
             $('#search_text').keyup(function(){
                 var txt = $(this).val();
-                 $('#result').html('');
                 if(txt != '' && txt.length > 3)
                 {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(function (){
                     $.ajax({
                         url: base_url+'/home/doSearch',
                         type: 'POST',
@@ -316,8 +320,9 @@
                     })
                     .always(function(data) {
                         console.log("complete");
-                        $('#result').html(data);
-                    });  
+                        $('#update').html(data);
+                    });
+                    },1000);
                 }
                 else
                 {                   
