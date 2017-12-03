@@ -117,7 +117,7 @@
 
 		public function getStore($name)
 		{
-			$base_url = 'http://localhost/CoffeeStoreWeb/public';
+			$base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
 			$content = '';
 			$path = str_replace('\\', '/', __DIR__);
 			include($path.'/../database.php');
@@ -134,7 +134,7 @@
 					$content .= '</div></div>';
 					/* Fix a style of css here */
 				}
-				return $content;
+				echo $content;
 			}
 			else
 			{

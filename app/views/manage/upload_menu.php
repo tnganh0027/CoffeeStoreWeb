@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php 
-    $base_url = 'http://localhost/CoffeeStoreWeb/public';
+    $base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
  ?>
  
 <head>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/jquery.glide.min.js"></script>
-    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
-    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
+    <script src="http://localhost:8888/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
+    <script src="http://localhost:8888/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
@@ -66,7 +66,7 @@
     });
   </script>
   <script>
-    var base_url = 'http://localhost/CoffeeStoreWeb/public';
+    var base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
     $(document).ready(function(){
       var text = $('#recipe').text();
       $('#btn_submit').click(function(event) {

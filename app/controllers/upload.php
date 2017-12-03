@@ -70,7 +70,7 @@
 			}
 			/*              */
 
-			$base_url = 'http://localhost/CoffeeStoreWeb/public/';
+			$base_url = 'http://localhost:8888/CoffeeStoreWeb/public/';
 			$image = $base_url . "uploads/" . basename($_FILES["image"]["name"]);
 
 
@@ -201,7 +201,7 @@
 			}
 			/*              */
 
-			$base_url = 'http://localhost/CoffeeStoreWeb/public/';
+			$base_url = 'http://localhost:8888/CoffeeStoreWeb/public/';
 			$image = $base_url . "uploads/" . basename($_FILES["image"]["name"]);
 
 			$data = $this->model('cfm_model');

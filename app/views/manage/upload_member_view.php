@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php 
-    $base_url = 'http://localhost/CoffeeStoreWeb/public';
+    $base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
  ?>
  
 <head>

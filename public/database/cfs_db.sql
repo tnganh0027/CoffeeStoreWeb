@@ -42,10 +42,10 @@ CREATE TABLE `cfm_data` (
 --
 
 INSERT INTO `cfm_data` (`id`, `image`, `about`, `name`, `idname`, `link_fb`, `link_ins`, `link_tw`) VALUES
-(1, 'http://localhost/CoffeeStoreWeb/public/uploads/mem_1.jpg', '기억하나요 우리 함께 했던 시간 L.O.V.E LUV.', 'Binh Nguyen Khanh', 'Habbangie &hearts;', 'https://www.facebook.com/cray.jjj', '', ''),
-(3, 'http://localhost/CoffeeStoreWeb/public/uploads/mem_3.jpg', '내 몸맨 nice nice body 잘빠진 다리 쌔끈한 허리.', 'Anh Truong Ngoc', 'Hyomin &hearts;', 'https://www.facebook.com/profile.php?id=100010150110239', '', ''),
-(4, 'http://localhost/CoffeeStoreWeb/public/uploads/mem_2.jpg', '너와 나 지금부터 잠시 12345. 눈을 감고 가만히 서 12345.', 'Phuong Do Hoang Minh', 'Mamarong &hearts;', 'https://www.facebook.com/phuong.dohoang07', '', ''),
-(5, 'http://localhost/CoffeeStoreWeb/public/uploads/mem_4.jpg', 'How are you 내 사랑 잃어버린 조각 보고 싶어 울다 지칠 때 난.', 'Tri Le Nguyen Minh', 'Elsie Ej &hearts;', 'https://www.facebook.com/tri.le.7186', '', '');
+(1, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/mem_1.jpg', '기억하나요 우리 함께 했던 시간 L.O.V.E LUV.', 'Binh Nguyen Khanh', 'Habbangie &hearts;', 'https://www.facebook.com/cray.jjj', '', ''),
+(3, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/mem_3.jpg', '내 몸맨 nice nice body 잘빠진 다리 쌔끈한 허리.', 'Anh Truong Ngoc', 'Hyomin &hearts;', 'https://www.facebook.com/profile.php?id=100010150110239', '', ''),
+(4, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/mem_2.jpg', '너와 나 지금부터 잠시 12345. 눈을 감고 가만히 서 12345.', 'Phuong Do Hoang Minh', 'Mamarong &hearts;', 'https://www.facebook.com/phuong.dohoang07', '', ''),
+(5, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/mem_4.jpg', 'How are you 내 사랑 잃어버린 조각 보고 싶어 울다 지칠 때 난.', 'Tri Le Nguyen Minh', 'Elsie Ej &hearts;', 'https://www.facebook.com/tri.le.7186', '', '');
 
 -- --------------------------------------------------------
 
@@ -69,13 +69,13 @@ CREATE TABLE `cfs_data` (
 --
 
 INSERT INTO `cfs_data` (`id`, `image`, `name`, `address`, `content`, `about`, `view`, `star`) VALUES
-(1, 'http://localhost/CoffeeStoreWeb/public/uploads/17308764_1879495292322136_2284954227869868252_n.jpg', 'Coffee House Cao Thắng', '86 - 88, Cao Thắng, Quận 3, TP. HCM', '', 'Café/Dessert', 12, 4),
-(2, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-h1-jpg-888-635974314774218377.jpg', 'Rooftop Grand Lounge', 'Tầng 20 Grand Hotel, 8 Đồng Khởi,  Quận 1, TP. HCM', '', 'Café/Dessert', 42, 3),
-(3, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-wevwev-jpg-126-636335639676795774.jpg', 'Koi Thé Café - Cao Thắng Plaza', 'Cao Thắng Plaza, 19 Cao Thắng, Quận 3, TP. HCM', '', 'Café/Dessert', 4, 5),
-(4, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-z5clijri-jpg.jpg', 'The Alley - Trà Sữa Đài Loan - Hồ Tùng Mậu', '114 Hồ Tùng Mậu, Quận 1, TP. HCM', '', 'Café/Dessert - Đài Loan', 4, 4),
-(5, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-untitled-8-jpg-390-636143871176071590.jpg', 'HD Gia Lai Coffee - 24h', '119 Cống Quỳnh, P. Nguyễn Cư Trinh, Quận 1, TP. HCM', '', 'CAFÉ/DESSERT', 42, 3),
-(6, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-mobile-8-jpg.jpg', 'The World Of Heineken', '36 Hồ Tùng Mậu,  Quận 1, TP. HCM', '', 'Khu Ẩm Thực - Việt Nam - Nhóm hội, Giới văn phòng', 40, 4),
-(7, 'http://localhost/CoffeeStoreWeb/public/uploads/foody-tra-sua-gong-cha-phan-xich-long-830-636356488379404284.jpg', 'Trà Sữa Gong Cha', '240 Phan Xích Long, P. 7,  Quận Phú Nhuận, TP. HCM', '', 'Café/Dessert', 41, 4);
+(1, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/17308764_1879495292322136_2284954227869868252_n.jpg', 'Coffee House Cao Thắng', '86 - 88, Cao Thắng, Quận 3, TP. HCM', '', 'Café/Dessert', 12, 4),
+(2, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/foody-mobile-h1-jpg-888-635974314774218377.jpg', 'Rooftop Grand Lounge', 'Tầng 20 Grand Hotel, 8 Đồng Khởi,  Quận 1, TP. HCM', '', 'Café/Dessert', 42, 3),
+(3, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/foody-mobile-wevwev-jpg-126-636335639676795774.jpg', 'Koi Thé Café - Cao Thắng Plaza', 'Cao Thắng Plaza, 19 Cao Thắng, Quận 3, TP. HCM', '', 'Café/Dessert', 4, 5),
+(4, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/foody-mobile-z5clijri-jpg.jpg', 'The Alley - Trà Sữa Đài Loan - Hồ Tùng Mậu', '114 Hồ Tùng Mậu, Quận 1, TP. HCM', '', 'Café/Dessert - Đài Loan', 4, 4),
+(5, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/foody-mobile-untitled-8-jpg-390-636143871176071590.jpg', 'HD Gia Lai Coffee - 24h', '119 Cống Quỳnh, P. Nguyễn Cư Trinh, Quận 1, TP. HCM', '', 'CAFÉ/DESSERT', 42, 3),
+(6, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/foody-mobile-8-jpg.jpg', 'The World Of Heineken', '36 Hồ Tùng Mậu,  Quận 1, TP. HCM', '', 'Khu Ẩm Thực - Việt Nam - Nhóm hội, Giới văn phòng', 40, 4),
+(7, 'http://localhost:8888/CoffeeStoreWeb/public/uploads/foody-tra-sua-gong-cha-phan-xich-long-830-636356488379404284.jpg', 'Trà Sữa Gong Cha', '240 Phan Xích Long, P. 7,  Quận Phú Nhuận, TP. HCM', '', 'Café/Dessert', 41, 4);
 
 --
 -- Indexes for dumped tables

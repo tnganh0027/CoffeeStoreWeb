@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<?php 
-    	$base_url = 'http://localhost/CoffeeStoreWeb/public';
+    	$base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
  	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -1,5 +1,5 @@
 <?php 
-  $base_url = 'http://localhost/CoffeeStoreWeb/public';
+  $base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
  ?> 
 <div class="ui inverted segment">
   <div class="ui inverted secondary pointing menu">

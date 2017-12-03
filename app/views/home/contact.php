@@ -2,7 +2,7 @@
 <html>
 
 <?php 
-    $base_url = 'http://localhost/CoffeeStoreWeb/public';
+    $base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
  ?>
  
 <head>
@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/contact.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
-    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
-    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
+    <script src="http://localhost:8888/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
+    <script src="http://localhost:8888/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
@@ -25,11 +25,12 @@
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
                 <div class="ui search item" style="width: 30%;">
                     <div class="ui icon input">
-                        <input type="text" placeholder="Search..." id="search_text" autocomplete="off">
-                        <i class="search link icon" id="search-icon"></i>        
+                        <input class="prompt" type="text" placeholder="Search..." id="search_text" autocomplete="off">
+                        <i class="search link icon" id="search-icon"></i>
                     </div>
+                    <div class="results"></div>
                 </div>
-                
+
             <div class="right menu">
                 <a class="item" href="<?= $base_url ?>">Home</a>
                 <a class="item" href="<?= $base_url ?>/home/explore">Explore</a>
@@ -103,7 +104,7 @@
     
     
     <script>
-        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+        var base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
         $(document).ready(function(){
             $('#search_text').keyup(function(){
                 var txt = $(this).val();
@@ -132,6 +133,41 @@
                 }
             });
         });
+
+        //change this content to the results that get from foody rest
+        var content = [
+            { title: 'Andorra' },
+            { title: 'United Arab Emirates' },
+            { title: 'Afghanistan' },
+            { title: 'Antigua' },
+            { title: 'Anguilla' },
+            { title: 'Albania' },
+            { title: 'Armenia' },
+            { title: 'Netherlands Antilles' },
+            { title: 'Angola' },
+            { title: 'Argentina' },
+            { title: 'American Samoa' },
+            { title: 'Austria' },
+            { title: 'Australia' },
+            { title: 'Aruba' },
+            { title: 'Aland Islands' },
+            { title: 'Azerbaijan' },
+            { title: 'Bosnia' },
+            { title: 'Barbados' },
+            { title: 'Bangladesh' },
+            { title: 'Belgium' },
+            { title: 'Burkina Faso' },
+            { title: 'Bulgaria' },
+            { title: 'Bahrain' },
+            { title: 'Burundi' }
+            // etc
+        ];
+
+        $('.ui.search.item')
+            .search({
+                source: content
+            })
+        ;
 
     </script>
 

@@ -2,7 +2,7 @@
 <html>
 
 <?php 
-    $base_url = 'http://localhost/CoffeeStoreWeb/public';
+    $base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
  ?>
 
 <head>
@@ -20,11 +20,12 @@
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
-            <div class="item" style="width: 30%;">
+            <div class="ui search item" style="width: 30%;">
                 <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search-bar">
+                    <input class="prompt" type="text" placeholder="Search..." id="search_text" autocomplete="off">
                     <i class="search link icon" id="search-icon"></i>
                 </div>
+                <div class="results"></div>
             </div>
 
             <div class="right menu">
@@ -156,7 +157,7 @@
     </script>
 
     <script>
-        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+        var base_url = 'http://localhost:8888/CoffeeStoreWeb/public';
         $(document).ready(function(){
             $('#search_text').keyup(function(){
                 var txt = $(this).val();
