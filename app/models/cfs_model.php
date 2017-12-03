@@ -132,7 +132,7 @@
 					$content .= '<a class="header" href="'.$base_url.'/home/detail_store/'.$row['id'].'">'.$row['name'].'</a>';
 					$content .= '<div class="description">'.$row['address'].'</div>';
 					$content .= '</div></div>';
-					
+					/* Fix a style of css here */
 				}
 				return $content;
 			}

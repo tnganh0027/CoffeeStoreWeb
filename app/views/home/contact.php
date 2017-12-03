@@ -39,7 +39,8 @@
             </div>
         </div>
     </div>
-
+    
+    <!--Here is show result from css-->
     <div class="ui top align selection list" id="result" style="text-align: center;z-index: 9999;">
     </div>
    
