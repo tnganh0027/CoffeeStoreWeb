@@ -23,13 +23,28 @@
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search-bar">
-                    <i class="search link icon" id="search-icon"></i>
+                    <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
+                    <i class="search link icon" id="search-icon"></i>        
                 </div>
             </div>
 
             <div class="right menu">
-                <a class="item" href="<?= $base_url ?>">Home</a>
+                <?php 
+                    if(isset($_SESSION['login_user']))
+                    {
+                        $name = explode("@",$_SESSION['login_user'])
+                ?>
+                    <a class="item">Hi, <?= $name[0] ?></a>
+                    <a class="item" href="<?= $base_url ?>/home/doLogout"><i class="sign out icon"></i></a>
+                <?php
+                    }
+                    else
+                    {
+                ?>
+                    <a class="item" href="<?= $base_url ?>/home/login">Login</i></a>
+                <?php
+                    }
+                ?>
                 <a class="item" href="<?= $base_url ?>/home/explore">Explore</a>
                 <a class="item" href="<?= $base_url ?>/home/about">About</a>
                 <a class="item" href="<?= $base_url ?>/home/contact">Contact</a>
@@ -37,6 +52,7 @@
             </div>
         </div>
     </div>
+    <div id="update"></div>
     <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
         <div class="ui centered grid">
             <div class="sixteen wide mobile sixteen wide tablet two wide computer column">

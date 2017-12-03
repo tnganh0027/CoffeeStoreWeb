@@ -15,22 +15,47 @@
     <link rel="stylesheet" type="text/css" href="<?= $base_url ?>/css/infor.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>
+    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckeditor.js"></script>
+    <script src="http://localhost/CoffeeStoreWeb/ckeditor/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
-
+    
+    <?php 
+        $uri = $_SERVER['REQUEST_URI'];
+        $uri = explode('/',$uri);
+        $id_store = end($uri);
+     ?>
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu header-nav">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
             <div class="item" style="width: 30%;">
                 <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search-bar">
-                    <i class="search link icon" id="search-icon"></i>
+                    <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
+                    <i class="search link icon" id="search-icon"></i>        
                 </div>
-            </div>
 
             <div class="right menu">
-                <a class="item" href="<?= $base_url ?>">Home</a>
+                <?php
+                    $save = '';
+                    if(isset($_SESSION['login_user']))
+                    {
+                        $save = $_SESSION['login_user'];
+                        $name = explode("@",$_SESSION['login_user']);
+                        
+                ?>
+                    <a class="item">Hi, <?= $name[0] ?></a>
+                    <a class="item" href="<?= $base_url ?>/home/doLogout"><i class="sign out icon"></i></a>
+                <?php
+                    }
+                    else
+                    {
+                        $save = '';
+                ?>
+                    <a class="item" href="<?= $base_url ?>/home/login">Login</i></a>
+                <?php
+                    }
+                ?>
                 <a class="item" href="<?= $base_url ?>/home/explore">Explore</a>
                 <a class="item" href="<?= $base_url ?>/home/about">About</a>
                 <a class="item" href="<?= $base_url ?>/home/contact">Contact</a>
@@ -38,11 +63,7 @@
             </div>
         </div>
     </div>
-
-
-
-
-
+    <div id="update"></div>
     <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
 
 
@@ -208,133 +229,38 @@
             <div class="ui divider"></div>
             <!--COMMENT PART-->
             <div class="row">
-
                 <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                     <h2 class="ui header">Comments</h2>
                     <div class="ui comments" id="comments">
-                        
+                        <?php foreach ($data['cmt'] as $value): ?>
                         <div class="comment">
-                            <a class="avatar">
-                                <img src="../resources/images/ava1.jpg">
-                            </a>
                             <div class="content">
-                                <a class="author"></a>
-                                <div class="metadata">
+                                <a class="author"><?= $value['user_email'] ?></a>
+                                <!-- <div class="metadata">
                                     <span class="date">Today at 5:42PM</span>
-                                </div>
+                                </div> -->
                                 <div class="text">
-                                    verry good
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">Reply</a>
+                                    <?= $value['content'] ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="../resources/images/elliot.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Elliot Fu</a>
-                                <div class="metadata">
-                                    <span class="date">Yesterday at 12:30AM</span>
-                                </div>
-                                <div class="text">
-                                    <p>This has been very useful for my research. Thanks as well!</p>
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">Reply</a>
-                                </div>
-                            </div>
-                            <div class="comments">
-                                <div class="comment">
-                                    <a class="avatar">
-                                        <img src="../resources/images/jenny.jpg">
-                                    </a>
-                                    <div class="content">
-                                        <a class="author">Jenny Hess</a>
-                                        <div class="metadata">
-                                            <span class="date">Just now</span>
-                                        </div>
-                                        <div class="text">
-                                            Elliot you are always so right :)
-                                        </div>
-                                        <div class="actions">
-                                            <a class="reply">Reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="../resources/images/joe.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Joe Henderson</a>
-                                <div class="metadata">
-                                    <span class="date">5 days ago</span>
-                                </div>
-                                <div class="text">
-                                    Dude, this is awesome. Thanks so much
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">Reply</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
+                       
+                    
 
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="../resources/images/ava1.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Joe Henderson</a>
-                                <div class="metadata">
-                                    <span class="date">5 days ago</span>
-                                </div>
-                                <div class="text">
-                                    Dude, this is awesome. Thanks so much
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">Reply</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="../resources/images/joe.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Joe Henderson</a>
-                                <div class="metadata">
-                                    <span class="date">5 days ago</span>
-                                </div>
-                                <div class="text">
-                                    Dude, this is awesome. Thanks so much
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">Reply</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <form class="ui reply form">
-                            <div class="field">
-                                <textarea></textarea>
-                            </div>
-                            <div class="ui blue labeled submit icon button">
-                                <i class="icon edit"></i> Add Reply
-                            </div>
-                        </form>
+                        
                     </div>
+                    <form class="ui reply form">
+                            <div class="field">
+                                <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                            </div>
+                            <button type="button" class="ui blue labeled submit icon button" id="btn_cmt" name="btn_cmt">
+                                <i class="icon edit"></i> Add Reply
+                            </button>
+                    </form>
                 </div>
 
             </div>
-
-
-
         </div>
 
     </div>
@@ -366,18 +292,7 @@
             <h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-             $.ajax({
-                crossOrigin: true,
-                method:'post',
-                url: 'https://www.foody.vn/ho-chi-minh/tra-sua-gong-cha',
-                success: function(data) {
-                    console.log(data);
-                    }
-                });
-            });
-    </script>
+
 
     <script>
         var base_url = 'http://localhost/CoffeeStoreWeb/public';
@@ -410,6 +325,59 @@
             });
         });
 
+    </script>
+
+    <script>
+         var email = '<?= $save ?>'; //fixed if can
+         var idstore = '<?= $id_store ?>';
+         var base_url = 'http://localhost/CoffeeStoreWeb/public';
+         $(document).ready(function(){
+            $("#btn_cmt").click(function(event) {
+                /* Act on the event */
+                if(email == '')
+                {
+                    alert('You should login to comment !');
+                }
+                else {
+                    CKEDITOR.config.entities_latin = false;
+                    var text = CKEDITOR.instances.content.getData();
+                    $.ajax({
+                        url: base_url + '/home/doComment',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {user_email: email,
+                                content: text,
+                                store: parseInt(idstore)},
+                    })
+                    .done(function() {
+                        //console.log("success");
+                    })
+                    .fail(function() {
+                        //console.log("error");
+                    })
+                    .always(function(res) {
+                        console.log("complete");
+                        var add = '<div class="comment">';
+                        add += '<div class="content">';
+                        add += '<a class="author">'+email+'</a>';
+                        add += '<div class="text">'+text+'</div>';
+                        add += '</div></div>';
+                        $('#comments').append(add);
+                    });
+                }
+            });
+         });
+    </script>
+
+    <script>
+    CKEDITOR.replace( 'content', {
+        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?Type=Images',
+        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl:  '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        filebrowserWindowWidth : '1000',
+        filebrowserWindowHeight : '700'
+    });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>/js/semantic.js"></script>

@@ -25,13 +25,29 @@
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
                 <div class="ui search item" style="width: 30%;">
                     <div class="ui icon input">
-                        <input type="text" placeholder="Search..." id="search_text" autocomplete="off">
+                        <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
                         <i class="search link icon" id="search-icon"></i>        
                     </div>
+                    <!-- <div class="results" id="result"></div> -->
                 </div>
                 
             <div class="right menu">
-                <a class="item" href="<?= $base_url ?>">Home</a>
+                <?php 
+                    if(isset($_SESSION['login_user']))
+                    {
+                        $name = explode("@",$_SESSION['login_user'])
+                ?>
+                    <a class="item">Hi, <?= $name[0] ?></a>
+                    <a class="item" href="<?= $base_url ?>/home/doLogout"><i class="sign out icon"></i></a>
+                <?php
+                    }
+                    else
+                    {
+                ?>
+                    <a class="item" href="<?= $base_url ?>/home/login">Login</i></a>
+                <?php
+                    }
+                ?>
                 <a class="item" href="<?= $base_url ?>/home/explore">Explore</a>
                 <a class="item" href="<?= $base_url ?>/home/about">About</a>
                 <a class="item" href="<?= $base_url ?>/home/contact">Contact</a>
@@ -41,12 +57,11 @@
     </div>
     
     <!--Here is show result from css-->
-    <div class="ui top align selection list" id="result" style="text-align: center;z-index: 9999;">
-    </div>
+    <div id="update"></div>
    
     
 
-    <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;z-index: -9999;">
+    <div class="ui middle aligned main container" style="padding-top: 30px; padding-bottom: 30px;">
         <div class="ui segment">
             <h1 class="ui dividing header">Write us</h1>
             <p>Please feel free to contact us by filling the form below. We will be in touch shortly.</p>
@@ -105,11 +120,15 @@
     <script>
         var base_url = 'http://localhost/CoffeeStoreWeb/public';
         $(document).ready(function(){
+            
+            $('#update').html('');
+            var timeout = null;
             $('#search_text').keyup(function(){
                 var txt = $(this).val();
-                 $('#result').html('');
                 if(txt != '' && txt.length > 3)
                 {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(function (){
                     $.ajax({
                         url: base_url+'/home/doSearch',
                         type: 'POST',
@@ -124,8 +143,9 @@
                     })
                     .always(function(data) {
                         console.log("complete");
-                        $('#result').html(data);
-                    });  
+                        $('#update').html(data);
+                    });
+                    },1000);
                 }
                 else
                 {                   
@@ -134,7 +154,7 @@
         });
 
     </script>
-
+    
     <script>
     CKEDITOR.replace( 'content', {
         filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
