@@ -150,6 +150,16 @@
                 <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column ">
                     <h2 class="ui header"> Store's Menu</h2>
                     <div class="ui link four stackable cards">
+                        <?php 
+                            if($data['errormenu'] == TRUE)
+                            {
+                            ?>
+                                <?= $data['menu'] ?>
+                        <?php
+                            }
+                            else
+                            {
+                         ?>
                         <?php $count = 0; ?>
                         <?php foreach ($data['menu'] as $key => $value): ?>
                             <?php $count++; ?>
@@ -182,7 +192,7 @@
                                 </div>
                             </div>
                         <?php endforeach ?>
-                        
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -237,6 +247,16 @@
                 <div class="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                     <h2 class="ui header">Comments</h2>
                     <div class="ui comments" id="comments">
+                        <?php 
+                            if($data['errorcmt'] == TRUE)
+                            {
+                            ?>
+                                <?= $data['cmt'] ?>
+                        <?php
+                            }
+                            else
+                            {
+                         ?>
                         <?php foreach ($data['cmt'] as $value): ?>
                         <div class="comment">
                             <div class="content">
@@ -250,10 +270,7 @@
                             </div>
                         </div>
                         <?php endforeach ?>
-                       
-                    
-
-                        
+                        <?php } ?>
                     </div>
                     <form class="ui reply form">
                             <div class="field">
@@ -368,6 +385,7 @@
                     })
                     .always(function(res) {
                         console.log("complete");
+                        $("#no_information").fadeOut();
                         var add = '<div class="comment">';
                         add += '<div class="content">';
                         add += '<a class="author">'+email+'</a>';

@@ -61,11 +61,43 @@
 			$comment = $data->getComment($id);
 			$some_images = $data->getSomeImages($result[0]['name']);
 			$menu = $data->getMenu($result[0]['name']);
-			$result_array = array('detail' => $result,
+			$errorcmt = FALSE;
+			$errormenu = FALSE;
+			if($comment == FALSE || $menu == FALSE || $some_images == FALSE) 
+			{
+				if($comment == FALSE)
+				{
+					$comment = '<div id="no_information" class="comment">';
+					$comment .= '<div class="content">';
+                    $comment .= '<div class="text">';
+                    $comment .= 'Has not comment yet ! Be the frist one !';
+                    $comment .= '</div></div></div>';
+                    $errorcmt = TRUE;                
+				}
+
+				if($menu == FALSE)
+				{
+					$menu = '<div class="ui black segment">We will update soon!</div>';
+					$errormenu = TRUE;
+				}
+
+				$result_array = array('detail' => $result,
 								'some_images' => $some_images,
 								'menu' => $menu,
-								'cmt' => $comment);
-			$this->view('home/infor',$result_array);
+								'cmt' => $comment,
+								'errorcmt' => $errorcmt,
+								'errormenu' => $errormenu);
+
+				$this->view('home/infor',$result_array);
+			}
+			else {
+				$result_array = array('detail' => $result,
+								'some_images' => $some_images,
+								'menu' => $menu,
+								'cmt' => $comment,
+								'error' => FALSE);
+				$this->view('home/infor',$result_array);
+			}
 		}
 
 		public function doSearch()
@@ -143,7 +175,9 @@
 				$search = addslashes($_GET['search_text']);
 				if(empty($search))
 				{
-
+					$content = '<div class="ui black segment">Not Found In Data !</div>';
+					$result_array = array('error' => $content);
+					$this->view('home/result',$result_array);
 				}
 				else
 				{

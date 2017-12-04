@@ -95,7 +95,7 @@
                                         </span>
 
                                     <span class="right floated">
-                                            <i class="star icon"></i>
+                                            <i class="heart icon"></i>
                                             <?= $value['star'] ?>
                                         </span>
                                 </div>
