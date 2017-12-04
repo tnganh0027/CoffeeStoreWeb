@@ -43,8 +43,10 @@
                 
             <div class="right menu">
                 <?php 
+                    $save = '';
                     if(isset($_SESSION['login_user']))
                     {
+                        $save = $_SESSION['login_user'];
                         $name = explode("@",$_SESSION['login_user'])
                 ?>
                     <a class="item">Hi, <?= $name[0] ?></a>
@@ -53,6 +55,7 @@
                     }
                     else
                     {
+                        $save = '';
                 ?>
                     <a class="item" href="<?= $base_url ?>/home/login">Login</i></a>
                 <?php

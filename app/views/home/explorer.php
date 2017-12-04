@@ -108,8 +108,9 @@
                             $uri = $_SERVER['REQUEST_URI'];
                             $uri = explode('/',$uri);
                             $current_page = end($uri);
+                            if($current_page == 'explore')
+                                $current_page = 0;
                             $current_page = $current_page - 1;
-     
                             for ($i = 0; $i < $data['page'] ; $i++) {
                                 ?>
                                 <?php 

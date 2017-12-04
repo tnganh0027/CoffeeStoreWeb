@@ -110,6 +110,9 @@
                             $uri = $_SERVER['REQUEST_URI'];
                             $uri = explode('/',$uri);
                             $current_page = end($uri);
+                            $current_page = str_split($current_page,8)[0];
+                            if($current_page == 'doResult')
+                                $current_page = 0;
                             $current_page = $current_page - 1;
      
                             for ($i = 0; $i < $data['page'] ; $i++) {
