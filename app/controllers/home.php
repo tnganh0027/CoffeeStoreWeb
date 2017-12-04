@@ -53,11 +53,6 @@
 			$this->view('home/explorer', $result_array);
 		}
 
-		public function result()
-		{
-			$this->view('home/result');
-		}
-
 		public function detail_store($id)
 		{
 			$data = $this->model('cfs_model');
@@ -138,6 +133,39 @@
 			$data = $data->insertComment($content,$id_user[0]['id'],$id_store);
 
 			echo json_encode($data);
+		}
+
+		public function doResult()
+		{
+			$data = $this->model('cfs_model');
+			if(isset($_REQUEST['submit']))
+			{	
+				$search = addslashes($_GET['search_text']);
+				if(empty($search))
+				{
+
+				}
+				else
+				{
+					$result = $data->getResultStore($search,$this->total_store_in_onepage);
+					$page = $data->totalResultStore($search,$this->total_store_in_onepage);
+					$result_array = array('store' => $result,
+									'page' => $page,
+									'search' => $search);
+					$this->view('home/result', $result_array);
+				}
+			}	
+		}
+
+		public function doResultPage($search,$page)
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->loadStoreResultStore($search,$page,$this->total_store_in_onepage);
+			$page = $data->totalResultStore($search,$this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+					'page' => $page,
+					'search' => $search);
+			$this->view('home/result', $result_array);
 		}
 	}
  ?>

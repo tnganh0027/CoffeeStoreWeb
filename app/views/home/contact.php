@@ -23,10 +23,14 @@
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
-                <div class="ui search item" style="width: 30%;">
+                <div class="ui search item">
                     <div class="ui icon input">
-                        <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
-                        <i class="search link icon" id="search-icon"></i>        
+                        <form action="doResult" method="get">
+                            <input type="text" name="search_text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
+                            <button type="submit" class="ui secondary basic button" name="submit">
+                                <a><i class="search link icon" id="search-icon"></i>Search<a>
+                            </button>
+                        </form>       
                     </div>
                     <!-- <div class="results" id="result"></div> -->
                 </div>
@@ -148,7 +152,8 @@
                     },1000);
                 }
                 else
-                {                   
+                {
+                    $('#update').html('');                   
                 }
             });
         });

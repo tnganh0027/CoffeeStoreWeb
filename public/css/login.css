@@ -5,9 +5,9 @@ a:visited {
 }
 
 .ui.inverted.menu a.item:hover {
-    background: none;
+    background: none !important;
     text-decoration: underline;
-    color: rgba(253, 98, 17, 0.6);
+    color: rgba(253, 98, 17, 0.6) !important;
 }
 
 .ui.inverted.menu {
@@ -37,21 +37,6 @@ a:visited {
 
 .ui.container {
     min-height: 100%;
-}
-
-.slider1 .item1 {
-    background-image: url("../images/background_item_1.jpg");
-    background-size: cover;
-}
-
-.slider1 .item2 {
-    background-image: url("../images/background_item_2.jpg");
-    background-size: cover;
-}
-
-.slider1 .item3 {
-    background-image: url("../images/background_item_3.jpg");
-    background-size: cover;
 }
 
 @media only screen and (min-device-width:320px) {

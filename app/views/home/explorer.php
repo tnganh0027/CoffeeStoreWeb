@@ -20,13 +20,18 @@
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
-            <div class="item" style="width: 30%;">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
-                    <i class="search link icon" id="search-icon"></i>        
+                <div class="ui search item">
+                    <div class="ui icon input">
+                        <form action="doResult" method="get">
+                            <input type="text" name="search_text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
+                            <button type="submit" class="ui secondary basic button" name="submit">
+                                <a><i class="search link icon" id="search-icon"></i>Search<a>
+                            </button>
+                        </form>       
+                    </div>
+                    <!-- <div class="results" id="result"></div> -->
                 </div>
-            </div>
-
+                
             <div class="right menu">
                 <?php 
                     if(isset($_SESSION['login_user']))
@@ -56,13 +61,13 @@
         <div class="ui centered grid">
             <div class="sixteen wide mobile sixteen wide tablet two wide computer column">
                 <div class="ui vertical text menu">
-                    <div class="header item">Sort By</div>
+                    <div class="header item">Explore By</div>
                     <a class="item" href="<?= $base_url ?>/home/doExplorePopular">
 							Most Popular
-						</a>
+					</a>
                     <a class="item" href="">
 							Most Comments
-						</a>
+					</a>
                 </div>
             </div>
             <div class="sixteen wide mobile sixteen wide tablet fourteen wide computer column">
@@ -189,7 +194,8 @@
                     },1000);
                 }
                 else
-                {                   
+                {
+                    $('#update').html('');                   
                 }
             });
         });

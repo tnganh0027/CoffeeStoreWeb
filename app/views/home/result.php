@@ -21,13 +21,18 @@
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
         <div class="ui stackable inverted menu">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
-            <div class="item" style="width: 30%;">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
-                    <i class="search link icon" id="search-icon"></i>        
+                <div class="ui search item">
+                    <div class="ui icon input">
+                        <form action="doResult" method="get">
+                            <input type="text" name="search_text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
+                            <button type="submit" class="ui secondary basic button" name="submit">
+                                <a><i class="search link icon" id="search-icon"></i>Search<a>
+                            </button>
+                        </form>       
+                    </div>
+                    <!-- <div class="results" id="result"></div> -->
                 </div>
-            </div>
-
+                
             <div class="right menu">
                 <?php 
                     if(isset($_SESSION['login_user']))
@@ -57,187 +62,79 @@
         <div class="ui centered grid">
             <div class="sixteen wide mobile sixteen wide tablet two wide computer column">
                 <div class="ui vertical text menu">
-                    <div class="header item">Sort By</div>
+                    <div class="header item">Explore By</div>
+                    <a class="item" href="<?= $base_url ?>/home/doExplorePopular">
+                        Most Popular
+                    </a>
                     <a class="item">
-							Most Popular
-						</a>
-                    <a class="item">
-							Most Comments
-						</a>
+						Most Comments
+					</a>
                 </div>
             </div>
             <div class="sixteen wide mobile sixteen wide tablet fourteen wide computer column">
                 <div class="ui dividing header">Result</div>
                 <div class="ui segment" style="overflow: auto">
                     <div class="ui three stackable cards">
-                        <div class="card">
-                            <div class="image">
-                                <img src="../resources/images/background_item_1.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a href="infor.html">268 Lý Thường Kiệt Tp.HCM</a>
+                        <?php foreach ($data['store'] as $value): ?>
+                            <div class="card">
+                                <div class="image">
+                                    <img src="<?= $value['image'] ?>">
                                 </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
+                                <div class="content">
+                                    <div class="header"><?= $value['name'] ?></div>
+                                    <div class="meta">
+                                        <a href="<?= $base_url ?>/home/detail_store/<?= $value['id'] ?>"><?= $value['address'] ?></a>
+                                    </div>
+                                    <div class="description">
+                                        <?= $value['about'] ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="extra content">
-                                <span class="left floated">
-										<i class="unhide icon"></i>
-										75
-									</span>
+                                <div class="extra content">
+                                    <span class="left floated">
+                                            <i class="unhide icon"></i>
+                                            <?= $value['view'] ?>
+                                        </span>
 
-                                <span class="right floated">
-										<i class="star icon"></i>
-										7.1
-									</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image">
-                                <img src="../resources/images/background_item_1.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a href="infor.html">268 Lý Thường Kiệt Tp.HCM</a>
-                                </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
+                                    <span class="right floated">
+                                            <i class="star icon"></i>
+                                            <?= $value['star'] ?>
+                                        </span>
                                 </div>
                             </div>
-                            <div class="extra content">
-                                <span class="left floated">
-										<i class="unhide icon"></i>
-										75
-									</span>
-
-                                <span class="right floated">
-										<i class="star icon"></i>
-										7.1
-									</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image">
-                                <img src="../resources/images/background_item_1.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a href="infor.html">268 Lý Thường Kiệt Tp.HCM</a>
-                                </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <span class="left floated">
-										<i class="unhide icon"></i>
-										75
-									</span>
-
-                                <span class="right floated">
-										<i class="star icon"></i>
-										7.1
-									</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image">
-                                <img src="../resources/images/background_item_1.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a href="infor.html">268 Lý Thường Kiệt Tp.HCM</a>
-                                </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <span class="left floated">
-										<i class="unhide icon"></i>
-										75
-									</span>
-
-                                <span class="right floated">
-										<i class="star icon"></i>
-										7.1
-									</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image">
-                                <img src="../resources/images/background_item_1.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a href="infor.html">268 Lý Thường Kiệt Tp.HCM</a>
-                                </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <span class="left floated">
-										<i class="unhide icon"></i>
-										75
-									</span>
-
-                                <span class="right floated">
-										<i class="star icon"></i>
-										7.1
-									</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image">
-                                <img src="../resources/images/background_item_1.jpg">
-                            </div>
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a href="infor.html">268 Lý Thường Kiệt Tp.HCM</a>
-                                </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <span class="left floated">
-										<i class="unhide icon"></i>
-										75
-									</span>
-
-                                <span class="right floated">
-										<i class="star icon"></i>
-										7.1
-									</span>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                     <div class="ui divider"></div>
                     <div class="ui pagination menu">
-                        <a class="active item">
-								1
-							</a>
-                        <div class="disabled item">
-                            ...
-                        </div>
-                        <a class="item">
-								10
-							</a>
-                        <a class="item">
-								11
-							</a>
-                        <a class="item">
-								12
-							</a>
+                        <?php 
+                            $search = $data['search'];
+                            $uri = $_SERVER['REQUEST_URI'];
+                            $uri = explode('/',$uri);
+                            $current_page = end($uri);
+                            $current_page = $current_page - 1;
+     
+                            for ($i = 0; $i < $data['page'] ; $i++) {
+                                ?>
+                                <?php 
+                                    if($i == $current_page)
+                                    {
+                                 ?>
+                                    <a class="item" href="<?= $base_url ?>/home/doResultPage/<?= $search ?>/<?= $i + 1 ?>">
+                                        <?= $i+1 ?>
+                                    </a>
+                                <?php 
+                                    }
+                                    else {
+                                        ?>
+                                    <a class="active item" href="<?= $base_url ?>/home/doResultPage/<?= $search ?>/<?= $i + 1 ?>">
+                                        <?= $i+1 ?>
+                                    </a>
+                                <?php
+                                    }
+                                  ?>
+                                    
+                                <?php
+                            }
+                         ?>
                     </div>
                 </div>
             </div>
@@ -306,7 +203,8 @@
                     });  
                 }
                 else
-                {                   
+                {
+                    $('#update').html('');                   
                 }
             });
         });

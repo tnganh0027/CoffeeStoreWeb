@@ -27,22 +27,25 @@
         $id_store = end($uri);
      ?>
     <div id="nav-header-scroll" class="ui inverted vertical masthead center aligned segment">
-        <div class="ui stackable inverted menu header-nav">
+        <div class="ui stackable inverted menu">
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
-            <div class="item" style="width: 30%;">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
-                    <i class="search link icon" id="search-icon"></i>        
+                <div class="ui search item">
+                    <div class="ui icon input">
+                        <form action="doResult" method="get">
+                            <input type="text" name="search_text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
+                            <button type="submit" class="ui secondary basic button" name="submit">
+                                <a><i class="search link icon" id="search-icon"></i>Search<a>
+                            </button>
+                        </form>       
+                    </div>
+                    <!-- <div class="results" id="result"></div> -->
                 </div>
-            </div>
+                
             <div class="right menu">
-                <?php
-                    $save = '';
+                <?php 
                     if(isset($_SESSION['login_user']))
                     {
-                        $save = $_SESSION['login_user'];
-                        $name = explode("@",$_SESSION['login_user']);
-                        
+                        $name = explode("@",$_SESSION['login_user'])
                 ?>
                     <a class="item">Hi, <?= $name[0] ?></a>
                     <a class="item" href="<?= $base_url ?>/home/doLogout"><i class="sign out icon"></i></a>
@@ -50,7 +53,6 @@
                     }
                     else
                     {
-                        $save = '';
                 ?>
                     <a class="item" href="<?= $base_url ?>/home/login">Login</i></a>
                 <?php
@@ -325,7 +327,8 @@
                     },1000);
                 }
                 else
-                {                   
+                {
+                    $('#update').html('');                   
                 }
             });
         });
