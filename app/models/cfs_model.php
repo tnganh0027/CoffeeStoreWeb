@@ -169,6 +169,7 @@
 
 		public function totalResultStore($name,$total_store_in_onepage)
 		{
+			$check = FALSE;
 			$path = str_replace('\\', '/', __DIR__);
 			include($path.'/../database.php');
 			$sql = "SELECT * FROM cfs_data WHERE name LIKE '%".$name."%'";
@@ -176,17 +177,22 @@
 			while($row = $result->fetch_array())
 			{
 				$rows[] = $row;
+				$check = TRUE;
 			}
-
-			/* divide into small page */
-
-			$total_store = count($rows);
-			$total_page = ceil($total_store/$total_store_in_onepage);
-			return $total_page;
+			if($check == TRUE)
+			{
+				/* divide into small page */
+				$total_store = count($rows);
+				$total_page = ceil($total_store/$total_store_in_onepage);
+				return $total_page;
+			}
+			else 
+				return $check;
 		}
 
 		public function getResultView($total_store_in_onepage)
 		{
+			$check = FALSE;
 			$path = str_replace('\\', '/', __DIR__);
 			include($path.'/../database.php');
 			$sql = "SELECT * FROM cfs_data WHERE 2*view > (SELECT MAX(view) FROM cfs_data) LIMIT $total_store_in_onepage OFFSET 0";
@@ -194,12 +200,16 @@
 			while($row = $result->fetch_array())
 			{
 				$rows[] = $row;
+				$check = TRUE;
 			}
-			return $rows;
+			if($check == TRUE)
+				return $rows;
+			else return $check;
 		}
 
 		public function getResultStore($name,$total_store_in_onepage)
 		{
+			$check = FALSE;
 			$path = str_replace('\\', '/', __DIR__);
 			include($path.'/../database.php');
 			$sql = "SELECT * FROM cfs_data WHERE name LIKE '%".$name."%' LIMIT $total_store_in_onepage OFFSET 0";
@@ -207,8 +217,11 @@
 			while($row = $result->fetch_array())
 			{
 				$rows[] = $row;
+				$check = TRUE;
 			}
-			return $rows;
+			if($check == TRUE)
+				return $rows;
+			else return $check;
 		}
 
 		public function loadStoreResultView($page,$total_store_in_onepage)

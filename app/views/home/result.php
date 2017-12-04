@@ -75,6 +75,14 @@
                 <div class="ui dividing header">Result</div>
                 <div class="ui segment" style="overflow: auto">
                     <div class="ui three stackable cards">
+                        <?php if(empty($data['store']))
+                            {
+                            ?>
+                                <?= $data['error'] ?>
+                            <?php
+                            }
+                            else {
+                         ?>
                         <?php foreach ($data['store'] as $value): ?>
                             <div class="card">
                                 <div class="image">
@@ -137,6 +145,7 @@
                                     
                                 <?php
                             }
+                        }
                          ?>
                     </div>
                 </div>
