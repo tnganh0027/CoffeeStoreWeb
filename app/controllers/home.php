@@ -177,7 +177,6 @@
 				{
 					$content = '<div class="ui black segment">Not Found In Data !</div>';
 					$result_array = array('error' => $content);
-					$this->view('home/result',$result_array);
 				}
 				else
 				{
@@ -187,15 +186,14 @@
 					{
 						$content = '<div class="ui black segment">Not Found In Data !</div>';
 						$result_array = array('error' => $content);
-						$this->view('home/result',$result_array);
 					}
 					else {
-					$result_array = array('store' => $result,
+						$result_array = array('store' => $result,
 									'page' => $page,
 									'search' => $search);
-					$this->view('home/result', $result_array);
 					}
 				}
+				$this->view('home/result',$result_array);
 			}	
 		}
 

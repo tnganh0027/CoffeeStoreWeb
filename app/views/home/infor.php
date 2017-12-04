@@ -31,7 +31,7 @@
             <a href="<?= $base_url ?>" class="brand item" style="text-decoration: none;">The Coffee Shop</a>
                 <div class="ui search item">
                     <div class="ui icon input">
-                        <form action="doResult" method="get">
+                        <form action="<?= $base_url ?>/home/doResult" method="get">
                             <input type="text" name="search_text" placeholder="Search..." id="search_text" autocomplete="off" tabindex="1">
                             <button type="submit" class="ui secondary basic button" name="submit">
                                 <a><i class="search link icon" id="search-icon"></i>Search<a>
