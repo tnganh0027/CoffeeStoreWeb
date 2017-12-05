@@ -250,6 +250,7 @@
                         <?php 
                             if($data['errorcmt'] == TRUE)
                             {
+
                             ?>
                                 <?= $data['cmt'] ?>
                         <?php

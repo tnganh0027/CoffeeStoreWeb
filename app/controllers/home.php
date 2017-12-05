@@ -95,7 +95,8 @@
 								'some_images' => $some_images,
 								'menu' => $menu,
 								'cmt' => $comment,
-								'error' => FALSE);
+								'errorcmt' => FALSE,
+								'errormenu' => FALSE);
 				$this->view('home/infor',$result_array);
 			}
 		}
