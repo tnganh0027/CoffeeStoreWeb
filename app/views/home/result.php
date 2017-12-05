@@ -177,17 +177,7 @@
             <h4 class="ui inverted header" style="text-align: center;">The Coffee Shop &copy;2017 - ALL RIGHTS RESERVED.</h4>
         </div>
     </div>
-    <script>
-        $('#search-icon').click(function(e) {
-            e.preventDefault();
-            if ($('#search-bar').val() === '') {
-                //do something
-            } else {
-                var url = 'result.html';
-                window.open(url, '_self');
-            }
-        });
-    </script>
+   
 
     <script>
         var base_url = 'http://localhost/CoffeeStoreWeb/public';

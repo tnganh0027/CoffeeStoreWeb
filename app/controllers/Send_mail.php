@@ -11,7 +11,7 @@
 			/*	Send Mail 	*/
 			$mail = new PHPMailer;
 			$mail->CharSet = 'UTF-8';
-			//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+			$mail->SMTPDebug = 1;                               // Enable verbose debug output
 
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
@@ -20,7 +20,13 @@
 			$mail->Password = 'eqrwhxryybfzwxey';                           // SMTP password
 			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 587;                                    // TCP port to connect to
-
+			$mail->SMTPOptions = array(
+				'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+				)
+			);
 			
 			$mail->setFrom('CoffeeStore@gmail.com', 'Admin Web');
 			$mail->addAddress("1413005@hcmut.edu.vn");     // Add a recipient
