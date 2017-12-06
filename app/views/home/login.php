@@ -68,28 +68,28 @@
         </div>
     </div>
 	<div id="update"></div>
-	<div class="ui middle aligned center aligned grid">
+	<div class="ui middle aligned center aligned grid" id="signup">
 	  <div class="column">
 	    <h2 class="ui image header">
 	      <div class="content">
-	        Log-in to your account
+	        Sign-up your account
 	      </div>
 	    </h2>
-	    <form action="doLogin" method="post" class="ui large form">
+	    <form  class="ui large form" method="post">
 	      <div class="ui stacked secondary  segment">
 	        <div class="field">
 	          <div class="ui left icon input">
 	            <i class="user icon"></i>
-	            <input type="text" name="email" placeholder="E-mail address">
+	            <input type="text" name="sign_email" id="sign_email" placeholder="E-mail address">
 	          </div>
 	        </div>
 	        <div class="field">
 	          <div class="ui left icon input">
 	            <i class="lock icon"></i>
-	            <input type="password" name="password" placeholder="Password">
+	            <input type="password" name="sign_password" id="sign_password" placeholder="Password">
 	          </div>
 	        </div>
-	        <button type="submit" class="ui fluid large submit inverted blue button">Login</button>
+	        <button type="button" class="ui fluid large submit inverted blue button" id="btn_signup">Sign-up</button>
 	      </div>
 
 	      <div class="ui error message"></div>
@@ -97,10 +97,44 @@
 	    </form>
 
 	    <div class="ui message">
-	      New to us? <a href="">Register</a>
+	      Back to <a id="drc_login">login</a> ?
 	    </div>
 	  </div>
 	</div>
+
+    <div class="ui middle aligned center aligned grid" id="login">
+      <div class="column">
+        <h2 class="ui image header">
+          <div class="content">
+            Log-in to your account
+          </div>
+        </h2>
+        <form action="doLogin" method="post" class="ui large form">
+          <div class="ui stacked secondary  segment">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="email" placeholder="E-mail address">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Password">
+              </div>
+            </div>
+            <button type="submit" class="ui fluid large submit inverted blue button">Login</button>
+          </div>
+
+          <div class="ui error message"></div>
+
+        </form>
+
+        <div class="ui message">
+          New to us? <a id="drc_signup">Register</a>
+        </div>
+      </div>
+    </div>
 </body>
 	<script>
 		$(document)
@@ -176,6 +210,49 @@
                 }
             });
         });
+    </script>
 
+    <script>
+        var base_url = 'http://localhost/CoffeeStoreWeb/public';
+        var password = $('#sign_password').val();
+        $(document).ready(function(){
+            $('#btn_signup').click(function(event) {
+                /* Act on the event */
+                $.ajax({
+                    url: base_url + '/home/doSignup',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {user_email: $('#sign_email').val(),
+                            user_pass: $('#sign_password').val(), },
+                })
+                .done(function() {
+                    console.log("success");
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function(res) {
+                    alert("Register done. You can login with your account !")
+                    console.log("complete");
+                });
+                
+            });
+        });
+    </script>
+
+    <script>
+        $('#signup').fadeOut('fast');
+        $(document).ready(function(){
+            $('#drc_signup').click(function(event) {
+                /* Act on the event */
+                $('#login').fadeToggle('fast');
+                $('#signup').fadeToggle('fast');
+            });
+            $('#drc_login').click(function(event) {
+                /* Act on the event */
+                $('#login').fadeToggle('fast');
+                $('#signup').fadeToggle('fast');
+            });
+        });
     </script>
 </html>

@@ -380,6 +380,21 @@
 				return $last_id;
 			}
 		}
+
+		public function insertUser($email,$user_password)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			var_dump($password);
+			$sql = "INSERT INTO cfs_user (user_email, user_pass)
+					VALUES ('$email', '$user_password');";
+
+			if($conn->multi_query($sql) === TRUE){
+				$last_id = $conn->insert_id;
+				return $last_id;
+			}
+		}
 	}
 
  ?>

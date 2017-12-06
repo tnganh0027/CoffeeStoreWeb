@@ -215,5 +215,17 @@
 					'search' => $search);
 			$this->view('home/result', $result_array);
 		}
+
+		public function doSignup()
+		{
+			$email = $_POST['user_email'];
+			$password = $_POST['user_pass'];
+
+			echo $password;
+			
+			$data = $this->model('cfs_model');
+			$result = $data->insertUser($email,$password);
+			echo json_encode($result);
+		}
 	}
  ?>
