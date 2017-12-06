@@ -395,6 +395,59 @@
 				return $last_id;
 			}
 		}
+
+		public function getResultComment($total_store_in_onepage)
+		{
+			$check = FALSE;
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+			$sql = "SELECT * FROM cfs_comment,cfs_data WHERE cfs_data.id = cfs_comment.id_store GROUP BY cfs_comment.id_store HAVING 2*COUNT(cfs_comment.content) >= (SELECT MAX(lesscount) FROM (SELECT cfs_comment.id_store, COUNT(cfs_comment.content) lesscount FROM cfs_comment GROUP BY cfs_comment.id_store)AS T)";
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+				$check = TRUE;
+			}
+			if($check == TRUE)
+				return $rows;
+			else return $check;
+		}
+
+		public function totalResultComment($total_store_in_onepage)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+			$sql = "SELECT * FROM cfs_comment,cfs_data WHERE cfs_data.id = cfs_comment.id_store GROUP BY cfs_comment.id_store HAVING 2*COUNT(cfs_comment.content) >= (SELECT MAX(lesscount) FROM (SELECT cfs_comment.id_store, COUNT(cfs_comment.content) lesscount FROM cfs_comment GROUP BY cfs_comment.id_store)AS T)";
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+
+			/* divide into small page */
+
+			$total_store = count($rows);
+			$total_page = ceil($total_store/$total_store_in_onepage);
+			return $total_page;
+		}
+
+		public function loadStoreResultComment($page,$total_store_in_onepage)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			//position
+			$offset = ($page-1)* $total_store_in_onepage;
+			$sql = "SELECT * FROM cfs_comment,cfs_data WHERE cfs_data.id = cfs_comment.id_store GROUP BY cfs_comment.id_store HAVING 2*COUNT(cfs_comment.content) >= (SELECT MAX(lesscount) FROM (SELECT cfs_comment.id_store, COUNT(cfs_comment.content) lesscount FROM cfs_comment GROUP BY cfs_comment.id_store)AS T)";
+
+			$result = $conn->query($sql);
+			while($row = $result->fetch_array())
+			{
+				$rows[] = $row;
+			}
+			return $rows;
+		}
+		
 	}
 
  ?>

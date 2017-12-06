@@ -61,13 +61,13 @@
         <div class="ui centered grid">
             <div class="sixteen wide mobile sixteen wide tablet two wide computer column">
                 <div class="ui vertical text menu">
-                    <div class="header item">Explore By</div>
+                    <div class="header item">Sort By</div>
                     <a class="item" href="<?= $base_url ?>/home/doExplorePopular">
 							Most Popular
-					</a>
+						</a>
                     <a class="item" href="<?= $base_url ?>/home/doExploreComments">
 							Most Comments
-					</a>
+						</a>
                 </div>
             </div>
             <div class="sixteen wide mobile sixteen wide tablet fourteen wide computer column">
@@ -108,23 +108,24 @@
                             $uri = $_SERVER['REQUEST_URI'];
                             $uri = explode('/',$uri);
                             $current_page = end($uri);
-                            if($current_page == 'explore')
+                            if($current_page == 'doExploreComments')
                                 $current_page = 0;
                             $current_page = $current_page - 1;
+                            
                             for ($i = 0; $i < $data['page'] ; $i++) {
                                 ?>
                                 <?php 
                                     if($i == $current_page)
                                     {
                                  ?>
-                                    <a class="item" href="<?= $base_url ?>/home/page/<?= $i + 1 ?>">
+                                    <a class="item" href="<?= $base_url ?>/home/doExploreCommentsPage/<?= $i + 1 ?>">
                                         <?= $i+1 ?>
                                     </a>
                                 <?php 
                                     }
                                     else {
                                         ?>
-                                    <a class="active item" href="<?= $base_url ?>/home/page/<?= $i + 1 ?>">
+                                    <a class="active item" href="<?= $base_url ?>/home/doExploreCommentsPage/<?= $i + 1 ?>">
                                         <?= $i+1 ?>
                                     </a>
                                 <?php

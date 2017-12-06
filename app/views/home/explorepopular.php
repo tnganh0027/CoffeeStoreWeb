@@ -65,7 +65,7 @@
                     <a class="item" href="<?= $base_url ?>/home/doExplorePopular">
 							Most Popular
 						</a>
-                    <a class="item" href="">
+                    <a class="item" href="<?= $base_url ?>/home/doExploreComments">
 							Most Comments
 						</a>
                 </div>
@@ -95,7 +95,7 @@
                                         </span>
 
                                     <span class="right floated">
-                                            <i class="star icon"></i>
+                                            <i class="heart icon"></i>
                                             <?= $value['star'] ?>
                                         </span>
                                 </div>

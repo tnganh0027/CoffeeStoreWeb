@@ -222,10 +222,31 @@
 			$password = $_POST['user_pass'];
 
 			echo $password;
-			
+
 			$data = $this->model('cfs_model');
 			$result = $data->insertUser($email,$password);
 			echo json_encode($result);
 		}
+
+		public function doExploreComments()
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->getResultComment($this->total_store_in_onepage);
+			$page = $data->totalResultComment($this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('home/explorecomment', $result_array);
+		}
+
+		public function doExploreCommentsPage($page)
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->loadStoreResultComment($page,$this->total_store_in_onepage);
+			$page = $data->totalResultComment($this->total_store_in_onepage);
+			$result_array = array('store' => $result,
+								'page' => $page);
+			$this->view('home/explorecomment', $result_array);
+		}
+
 	}
  ?>

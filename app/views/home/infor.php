@@ -273,7 +273,7 @@
                         <?php endforeach ?>
                         <?php } ?>
                     </div>
-                    <form class="ui reply form">
+                    <form class="ui reply form" id="myform">
                             <div class="field">
                                 <textarea name="content" id="content" cols="30" rows="10"></textarea>
                             </div>
@@ -357,6 +357,12 @@
     </script>
 
     <script>
+        function CKupdate(){
+        for ( instance in CKEDITOR.instances ){
+        CKEDITOR.instances[instance].updateElement();
+        CKEDITOR.instances[instance].setData('');
+            }
+        }
          var email = '<?= $save ?>'; //fixed if can
          var idstore = '<?= $id_store ?>';
          var base_url = 'http://localhost/CoffeeStoreWeb/public';
@@ -370,6 +376,7 @@
                 else {
                     CKEDITOR.config.entities_latin = false;
                     var text = CKEDITOR.instances.content.getData();
+                    $('#myform').get(0).reset();
                     $.ajax({
                         url: base_url + '/home/doComment',
                         type: 'post',
@@ -392,6 +399,7 @@
                         add += '<a class="author">'+email+'</a>';
                         add += '<div class="text">'+text+'</div>';
                         add += '</div></div>';
+                        CKupdate();
                         $('#comments').append(add);
                     });
                 }
