@@ -61,7 +61,7 @@
         <div class="ui centered grid">
             <div class="sixteen wide mobile sixteen wide tablet two wide computer column">
                 <div class="ui vertical text menu">
-                    <div class="header item">Sort By</div>
+                    <div class="header item">Explore By</div>
                     <a class="item" href="<?= $base_url ?>/home/doExplorePopular">
 							Most Popular
 						</a>
