@@ -80,9 +80,9 @@
                                     <img src="<?= $value['image'] ?>">
                                 </div> 
                                 <div class="content">
-                                    <div class="header"><?= $value['name'] ?></div>
+                                    <div class="header"><a style="color:blue !important" href="<?= $base_url ?>/upload/addMenu/<?= $value['id'] ?>"><?= $value['name'] ?></a></div>
                                     <div class="meta">
-                                        <a href="<?= $base_url ?>/home/detail_store/<?= $value['id'] ?>"><?= $value['address'] ?></a>
+                                        <?= $value['address'] ?>
                                     </div>
                                     <div class="description">
                                         <?= $value['about'] ?>
@@ -153,10 +153,10 @@
                 <div class="eight wide column">
                     <h4 class="ui inverted header">Group 3</h4>
                     <div class="ui inverted list">
-                        <a href="#" class="item">Nguyen Khanh Binh</a>
-                        <a href="#" class="item">Truong Ngoc Anh</a>
-                        <a href="#" class="item">Le Nguyen Minh Tri</a>
-                        <a href="#" class="item">Do Hoang Minh Phuong</a>
+                        <a class="item">Nguyen Khanh Binh</a>
+                        <a class="item">Truong Ngoc Anh</a>
+                        <a  class="item">Le Nguyen Minh Tri</a>
+                        <a  class="item">Do Hoang Minh Phuong</a>
                     </div>
                 </div>
             </div>

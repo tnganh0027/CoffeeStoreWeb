@@ -31,9 +31,9 @@
                                     <img src="<?= $value['image'] ?>">
                                 </div> 
                                 <div class="content">
-                                    <div class="header"><?= $value['name'] ?></div>
+                                    <div class="header"><a style="color:blue !important" href="<?= $base_url ?>/upload/addMenu/<?= $value['id'] ?>"><?= $value['name'] ?></a></div>
                                     <div class="meta">
-                                        <a href="<?= $base_url ?>/upload/addMenu/<?= $value['id'] ?>"><?= $value['address'] ?></a>
+                                        <?= $value['address'] ?>
                                     </div>
                                     <div class="description">
                                         <?= $value['about'] ?>
@@ -50,6 +50,7 @@
                                             <?= $value['star'] ?>
                                         </span>
                                 </div>
+                                <button class="negative ui button">Delete</button>
                             </div>
                         <?php endforeach ?>  
                     </div>

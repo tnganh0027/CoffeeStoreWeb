@@ -154,11 +154,11 @@
 						$data = $this->model('cfs_model');
 						if($data->insertData($name,$address,$about,$view,$star,$image,$content,$open,$average_cost))
 						{
-							echo 'Done';
+							$this->view('manage/success_insert');
 						}
 						else 
 						{
-							echo 'Failure';
+							$this->view('manage/failure_insert');
 						}
 				} else {
 					header("WWW-Authenticate: Basic realm=\"Please enter your username and password to proceed further\"");
@@ -256,11 +256,11 @@
 					$data = $this->model('cfm_model');
 					if($data->insertData($image,$about,$name,$idname,$link_fb,$link_ins,$link_tw))
 					{
-						echo 'Done';
+						$this->view('manage/success_insert');
 					}
 					else 
 					{
-						echo 'Failure';
+						$this->view('manage/failure_insert');
 					}
 				} else {
 				header("WWW-Authenticate: Basic realm=\"Please enter your username and password to proceed further\"");
