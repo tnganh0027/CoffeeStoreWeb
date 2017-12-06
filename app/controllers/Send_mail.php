@@ -11,7 +11,7 @@
 			/*	Send Mail 	*/
 			$mail = new PHPMailer;
 			$mail->CharSet = 'UTF-8';
-			$mail->SMTPDebug = 1;                               // Enable verbose debug output
+			//$mail->SMTPDebug = 1;                               // Enable verbose debug output
 
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
@@ -44,10 +44,10 @@
 			//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 			
 			if(!$mail->send()) {
-			echo 'Message could not be sent.';
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
+				echo 'Message could not be sent.';
+				echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
-			echo 'Message has been sent';
+				$this->view('home/success_sendmail');
 			}
 
 			/*				*/

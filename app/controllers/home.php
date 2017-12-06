@@ -137,12 +137,19 @@
 			$password = $_POST['password'];
 			$data = $this->model('cfs_model');
 			$result = $data->getUser($email,$password);
-			$result = count($result);
-			if($result == 1)
+			if($result == FALSE)
 			{
-				$_SESSION['login_user'] = $email;
-				$result = $_SESSION['login_user'];
-				$this->view('home/success_login');
+				$this->view('home/fail_login');
+			}
+			else
+			{
+				$result = count($result);
+				if($result == 1)
+				{
+					$_SESSION['login_user'] = $email;
+					$result = $_SESSION['login_user'];
+					$this->view('home/success_login');
+				}
 			}
 		}
 

@@ -306,6 +306,7 @@
 
 		public function getUser($email,$user_password)
 		{
+			$check = FALSE;
 			$path = str_replace('\\', '/', __DIR__);
 			include($path.'/../database.php');
 
@@ -319,8 +320,12 @@
 			while($row = $result->fetch_array())
 			{
 				$rows[] = $row;
+				$check = TRUE;
 			}
-			return $rows;
+			if($check == TRUE)
+				return $rows;
+			else
+				return FALSE;
 		}
 
 		public function getComment($id_store)
