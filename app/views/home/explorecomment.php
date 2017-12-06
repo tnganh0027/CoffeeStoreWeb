@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="sixteen wide mobile sixteen wide tablet fourteen wide computer column">
-                <div class="ui dividing header">Explorer</div>
+                <div class="ui dividing header">Explorer By Most Comments</div>
                 <div class="ui segment" style="overflow: auto">
                     <div class="ui three stackable cards">
                         <?php foreach ($data['store'] as $value): ?>
@@ -80,7 +80,7 @@
                                     <img src="<?= $value['image'] ?>">
                                 </div> 
                                 <div class="content">
-                                    <div class="header"><a style="color:blue !important" href="<?= $base_url ?>/upload/addMenu/<?= $value['id'] ?>"><?= $value['name'] ?></a></div>
+                                    <div class="header"><a style="color:blue !important" href="<?= $base_url ?>/home/detail_store/<?= $value['id'] ?>"><?= $value['name'] ?></a></div>
                                     <div class="meta">
                                       <?= $value['address'] ?>
                                     </div>

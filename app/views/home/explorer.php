@@ -80,7 +80,7 @@
                                     <img src="<?= $value['image'] ?>">
                                 </div> 
                                 <div class="content">
-                                    <div class="header"><a style="color:blue !important" href="<?= $base_url ?>/upload/addMenu/<?= $value['id'] ?>"><?= $value['name'] ?></a></div>
+                                    <div class="header"><a style="color:blue !important" href="<?= $base_url ?>/home/detail_store/<?= $value['id'] ?>"><?= $value['name'] ?></a></div>
                                     <div class="meta">
                                         <?= $value['address'] ?>
                                     </div>
