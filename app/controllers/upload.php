@@ -94,9 +94,11 @@
 						$base_url = 'http://localhost/CoffeeStoreWeb/public/';
 						$image = $base_url . "uploads/" . basename($_FILES["image"]["name"]);
 
-
-
-						/*		insert some images */
+						
+						$data = $this->model('cfs_model');
+						if($data->insertData($name,$address,$about,$view,$star,$image,$content,$open,$average_cost))
+						{
+							/*		insert some images */
 						$errors = array();
 						
 						$extension = array("jpeg","jpg","png","gif");
@@ -150,10 +152,6 @@
 								}		
 							}
 						}
-						
-						$data = $this->model('cfs_model');
-						if($data->insertData($name,$address,$about,$view,$star,$image,$content,$open,$average_cost))
-						{
 							$this->view('manage/success_insert');
 						}
 						else 

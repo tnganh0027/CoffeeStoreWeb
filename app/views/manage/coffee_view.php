@@ -50,6 +50,7 @@
                                             <?= $value['star'] ?>
                                         </span>
                                 </div>
+                                <button class="positive ui button"><a style="color:white" href="<?= $base_url ?>/upload/doEdit/<?= $value['id'] ?>">Edit</a></button>
                                 <button class="negative ui button"><a style="color:white" href="<?= $base_url ?>/upload/doDel/<?= $value['id'] ?>">Delete</a></button>
                             </div>
                         <?php endforeach ?>  
