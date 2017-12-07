@@ -351,5 +351,19 @@
 			//echo json_encode($result);
 		}
 
+		public function doDel($id)
+		{
+			$data = $this->model('cfs_model');
+			$result = $data->deleteById($id);
+			if($result == TRUE)
+			{
+				$this->view('manage/success_delete');
+			}
+			else
+			{
+				$this->view('manage/failure_delete');
+			}
+		}
+
 	}
  ?>

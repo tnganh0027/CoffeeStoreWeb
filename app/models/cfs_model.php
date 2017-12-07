@@ -447,6 +447,19 @@
 			}
 			return $rows;
 		}
+
+		public function deleteById($id)
+		{
+			$path = str_replace('\\', '/', __DIR__);
+			include($path.'/../database.php');
+
+			$sql = "DELETE FROM cfs_data WHERE id = $id";
+			if ($conn->query($sql) === TRUE) {
+    			return TRUE;
+			} else {
+   				echo "Error deleting record: " . $conn->error;
+			}
+		}
 		
 	}
 

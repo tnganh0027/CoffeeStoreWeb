@@ -50,7 +50,7 @@
                                             <?= $value['star'] ?>
                                         </span>
                                 </div>
-                                <button class="negative ui button">Delete</button>
+                                <button class="negative ui button"><a style="color:white" href="<?= $base_url ?>/upload/doDel/<?= $value['id'] ?>">Delete</a></button>
                             </div>
                         <?php endforeach ?>  
                     </div>
